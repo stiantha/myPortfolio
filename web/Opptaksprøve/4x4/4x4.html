@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script src="scripts.js"></script>
+<title>StartIT</title>   
+</head>
+<body>
+    
+    <div class="container">
+        <h1>4 x 4</h1>
+        <div class="grid">
+            <div id="r1k1" onclick="trykk(this, 'r1k2', 'r2k1')"></div>
+            <div id="r1k2" onclick="trykk(this, 'r1k1', 'r2k2', 'r1k3')">6</div>
+            <div id="r1k3" onclick="trykk(this, 'r1k2', 'r2k3', 'r1k4')">1</div>
+            <div id="r1k4" onclick="trykk(this, 'r1k3', 'r2k4')">9</div>
+            
+            <div id="r2k1" onclick="trykk(this, 'r1k1', 'r2k2', 'r3k1')">2</div>
+            <div id="r2k2" onclick="trykk(this, 'r2k1', 'r1k2', 'r2k3', 'r3k2')">5</div>
+            <div id="r2k3" onclick="trykk(this, 'r1k3', 'r2k2', 'r3k3', 'r2k4')">7</div>
+            <div id="r2k4" onclick="trykk(this, 'r1k4', 'r2k3', 'r3k4')">12</div>
+            
+            <div id="r3k1" onclick="trykk(this, 'r2k1', 'r3k2', 'r4k1')">8</div>
+            <div id="r3k2" onclick="trykk(this, 'r3k1', 'r2k2', 'r3k3', 'r4k2')">4</div>
+            <div id="r3k3" onclick="trykk(this, 'r3k2', 'r2k3', 'r3k4', 'r4k3')">11</div>
+            <div id="r3k4" onclick="trykk(this, 'r2k4', 'r3k3', 'r4k4')">3</div>
+            
+            <div id="r4k1" onclick="trykk(this, 'r3k1', 'r4k2')">10</div>
+            <div id="r4k2" onclick="trykk(this, 'r4k1', 'r3k2', 'r4k3')"></div>
+            <div id="r4k3" onclick="trykk(this, 'r4k2', 'r3k3', 'r4k4')"></div>
+            <div id="r4k4" onclick="trykk(this, 'r3k4', 'r4k3')">13</div>
+            
+        </div>
+
+        <div id="Error">Kan ikke flyttes</div>
+        <div id="Win">Gratulerer! Du har vunnet!</div>
+    </div>
+
+</body>
+</html>

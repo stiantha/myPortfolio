@@ -1,0 +1,873 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 10rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /* 
+      Change favorite color
+      Default: hsl(162, 100%, 40%)
+      Orange: hsl(14, 100%, 65%) - Blue: hsl(210, 100%, 70%)
+      Pink: hsl(356, 100%, 75%) - Purple: hsl(250, 100%, 75%)
+
+      For more colors visit: https://colors.dopely.top/color-pedia
+      -> Choose any color 
+      -> click on tab (Color Conversion)
+      -> Copy the color mode (HSL)
+  */
+
+  /* Teal colors
+
+  --hue: 162;
+  --teal-first-color: hsl(var(--hue), 100%, 40%);
+  --first-color-alt: hsl(var(--hue), 50%, 50%);
+  --title-color: hsl(var(--hue), 56%, 35%);
+  --text-color: hsl(0, 0%, 77%);
+  --body-color: hsl(0, 1%, 13%);
+  --container-color: hsl(186, 73%, 10%);
+  --color2: hsl(var(--hue), 56%, 35%);
+  --color3: hsl(var(--hue), 70%, 30%);
+
+
+  */
+  --body-color: #212121;
+
+  --hue: 162;
+  --first-color: hsl(0, 0%, 100%);
+  --teal-first-color: hsl(var(--hue), 100%, 40%);
+  --first-color-alt: hsl(0, 0%, 100%);
+  --teal-first-color-alt: hsl(var(--hue), 56%, 35%);
+  --title-color: hsl(0, 0%, 100%);
+  --text-color: hsl(0, 0%, 100%);
+  --body-color: hsl(0, 1%, 13%);
+  --container-color: hsl(0, 0%, 18%);
+  --color2: hsl(0, 0%, 100%);
+  --color3: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 2rem;
+  --bigger-font-size: 1.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1115px) {
+  :root {
+    --biggest-font-size: 4rem;
+    --bigger-font-size: 2rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+.image-font {
+  font-size: 120px;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+textarea,
+.button {
+  background-color: white;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: var(--title-color);
+  display: inline-block;
+  font-size: 20px;
+  font: bolder;
+  transition: transform;
+}
+
+.button:hover {
+  transform: translateY(-0.25rem);
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+input,
+textarea,
+button {
+  outline: none;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  margin-inline: 1.5rem;
+  position: relative; 
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 2rem;
+}
+
+.section__subtitle {
+  text-align: center;
+  color: var(--text-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.section__subtitle {
+  font-size: var(--small-font-size);
+  margin-bottom: 0.25rem;
+}
+
+.section__subtitle span {
+  color: var(--first-color);
+}
+
+.main {
+  overflow: hidden; /* For animation ScrollReveal */
+}
+
+/*=============== HEADER & NAV ===============*/
+
+.header {
+  position: fixed;
+  height: 20px; /* Sett høyden på headeren */
+  top: 1.5rem; /* Sett toppen av headeren til 0 for å feste den øverst på skjermen */
+  font-size: var(--h2-font-size);
+  background-color: var(--body-color);
+  border-bottom: 2px solid var(--body-color);
+  z-index: 0;
+  left: 4rem;
+}
+
+.header.cmdline {
+  position: absolute;
+  top: 0;
+  color: black;
+}
+
+.nav__logo {
+  color: var(--text-color);
+  font-size: 1ch;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+/*=============== HOME ===============*/
+
+.home__container {
+  padding-top:-10rem;
+  row-gap: 2.5rem;
+  width: 300px; /* set the width of the element */
+  margin: 0 auto; /* set the left and right margins to "auto" */
+  text-align: center;
+  display: flex;
+  justify-content: center; /* horizontally center the child elements */
+  align-items: center; /* vertically center the child elements */
+  height: 100vh; /* set the height of the container to the full viewport height */
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.home__content {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.home__data {
+  text-align: center;
+  align-items: center;
+}
+
+.home__subtitle {
+  font-size: var(--bigger-font-size);
+  color: var(--color3);
+}
+.home__education {
+  font-size: var(--bigger-font-size);
+  color: var(--color2);
+}
+
+.home__subtitle span {
+  font-size: var(--bigger-font-size);
+  color: var(--color2);
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--teal-first-color);
+}
+
+.home__description {
+  margin-block: 1rem 1.5rem;
+  color: var(--color2);
+}
+
+.home__social {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
+  object-fit: contain;
+  position: sticky;
+  top: 100px; /* Sett toppmarginen til høyden på headeren pluss en margin som tilsvarer bildestørrelsen */
+  opacity: 1; /* Sett opprinnelig gjennomsiktighetsverdi til 1 for å gjøre bildet synlig */
+  transition: opacity 0.5s ease-in-out; /* Legg til en overgang for å gjøre gjennomsiktighetsendringen myk */
+}
+
+.home__social-link {
+  display: flex;
+  background-color: var(--first-color-alt);
+  padding: 0.5rem;
+  color: black;
+  font-size: 2rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform;
+}
+
+.home__social-link:hover {
+  transform: translateY(-0.25rem);
+}
+
+.home__image {
+  display: flex;
+  justify-content: center;
+  column-gap: 1.25rem;
+  object-fit: contain;
+  position: sticky;
+  opacity: 0.2; /* Sett opprinnelig gjennomsiktighetsverdi til 1 for å gjøre bildet synlig */
+  transition: opacity 0.5s ease-in-out; /* Legg til en overgang for å gjøre gjennomsiktighetsendringen myk */
+  /*clip-path:circle(50% at 50% 50%)*/
+}
+
+.home__image-border {
+  border: solid 0px var(--first-color);
+  z-index: 1;
+}
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+  background: var(--body-color);
+  font-family: "Karla", sans-serif;
+  width: 100vw;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
+}
+
+.skills {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  background-color: var(--body-color);
+  z-index: 1;
+  column-gap: 1rem;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  padding: 16px;
+  border: none;
+  width: 250px;
+  z-index: 1;
+  color: var(--text-color);
+  font-size: 3ch;
+  position: relative;
+  flex-direction: column;
+  font-weight: var(--font-regular);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  top: -2px;
+  left: -20px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: hsl(var(--hue), 100%, 40%);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: hsl(0, 1%, 13%, 0.3);
+}
+
+/*=============== ABOUT ===============*/
+.about__container {
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+  width: 300px; /* set the width of the element */
+  margin: 0 auto; /* set the left and right margins to "auto" */
+  text-align: center;
+  display: flex;
+  justify-content: center; /* horizontally center the child elements */
+  align-items: center; /* vertically center the child elements */
+  height: 100vh; /* set the height of the container to the full viewport height */
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.about__content {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.about__data {
+  text-align: center;
+  align-items: center;
+}
+
+.about__subtitle,
+.about__subtitle span,
+.about__title {
+  color: var(--first-color);
+}
+
+.about__title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: var(--font-semi-bold);
+}
+
+.about__description {
+  text-align: left center;
+  margin-block: 1rem 1.5rem;
+  color: var(--text-color);
+  font-size: 30px;
+  text-decoration: dashed;
+}
+
+.about-me {
+  background-color: var(--body-color);
+  border: 0px solid;
+  color: var(--title-color);
+  background-blend-mode: lighten;
+  opacity: 1;
+  padding: 50px 0;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-size: 36px;
+  color: #444;
+}
+
+p {
+  font-size: 20px;
+  color: var(--title-color);
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* Add teal accent color */
+h2 {
+  color: #ffffff;
+}
+
+.about-me p:first-of-type {
+  font-weight: bold;
+}
+
+/*=============== PROJECTS===============*/
+.project__container {
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+  width: 300px; /* set the width of the element */
+  margin: 0 auto; /* set the left and right margins to "auto" */
+  text-align: center;
+  display: flex;
+  justify-content: center; /* horizontally center the child elements */
+  align-items: center; /* vertically center the child elements */
+  height: 100vh; /* set the height of the container to the full viewport height */
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.project__content {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.project__data {
+  text-align: center;
+  align-items: center;
+}
+
+.project__subtitle,
+.project__subtitle span,
+.project__title {
+  color: var(--first-color);
+}
+
+.project__title {
+  text-align: center;
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.project__description {
+  text-align: left;
+  margin-block: 1rem 1.5rem;
+  color: var(--first-color-alt, 10%);
+  font-size: var(--bigger--font--size);
+}
+/*=============== PROGRAMS ===============*/
+.programs__container {
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+  width: 300px; /* set the width of the element */
+  margin: 0 auto; /* set the left and right margins to "auto" */
+  text-align: center;
+  display: flex;
+  justify-content: center; /* horizontally center the child elements */
+  align-items: center; /* vertically center the child elements */
+  height: 100vh; /* set the height of the container to the full viewport height */
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.programs__content {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.programs__data {
+  text-align: center;
+  align-items: center;
+}
+
+.programs__subtitle,
+.programs__subtitle span,
+.programs__title {
+  color: var(--first-color);
+}
+
+.programs__title {
+  text-align: center;
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.programs__description {
+  text-align: left;
+  margin-block: 1rem 1.5rem;
+  color: var(--first-color-alt, 10%);
+  font-size: var(--bigger--font--size);
+}
+
+
+
+
+
+
+
+/*=============== CONTACT ===============*/
+
+.contact__container {
+  padding-top: 2rem;
+  row-gap: 2.5rem;
+  width: 500px; /* set the width of the element */
+  margin: 0 auto; /* set the left and right margins to "auto" */
+  text-align: center;
+  display: flex;
+  justify-content: center; /* horizontally center the child elements */
+  align-items: center; /* vertically center the child elements */
+  height: 100vh; /* set the height of the container to the full viewport height */
+  max-width: 1000vw;
+}
+
+.contact__content {
+  display: grid;
+  row-gap: 2rem;
+}
+
+.contact__data {
+  text-align: center;
+  align-items: center;
+}
+
+.contact__subtitle,
+.contact__subtitle span,
+.contact__title {
+  color: var(--first-color);
+}
+
+.contact__title {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+}
+
+.contact__description {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--container-color);
+  color: rgb(255, 255, 255);
+  font-size: var(--bigger--font--size);
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  margin-bottom: 1rem; /* add spacing between the form fields */
+  text-align: left;
+  resize: none;
+}
+
+.contact__submit {
+  width: 10rem;
+  background-color: var(--container-color);
+  padding: 0.5rem;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transition: transform;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.contact__submit:hover {
+  transform: scale(1.1);
+}
+
+.footer {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  grid: center;
+  height: auto;
+  width: 1000px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.mainCont {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.mainCont h2 {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  font-size: 28px;
+  margin: 40px 0 0 0;
+  color: white;
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out 0s forwards;
+}
+
+.mainCont h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  margin: 0 0 40px 0;
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out 0.5s forwards;
+}
+
+.terminalCont {
+  background: rgb(27, 27, 27);
+  border-left:1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
+  width: 100%;
+  height: auto;
+  padding: 20px 0 0 0;
+  margin-top: 0px;
+  opacity: 0;
+  animation: ease-in-out 1s forwards, fadeInAnimation 0.8s ease-in-out 1s forwards;
+}
+
+.userEnteredText {
+  color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#terminalReslutsCont {
+  width: 100%;
+  height: 400px;
+  padding: 12px;
+  overflow-y: auto;
+  resize: none;
+  border: none;
+  font-size: 14px;
+  line-height: 28px;
+  display: block;
+  color: rgb(255, 255, 255);
+}
+
+#terminalReslutsCont a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+#terminalReslutsCont a:hover {
+  text-decoration: underline;
+}
+
+.terminalInputCont {
+  display: flex;
+  align-items: center;
+}
+
+
+#terminalTextInput {
+  background: rgb(27, 27, 27);
+  color: rgb(255, 255, 255);
+  display: block;
+  border-left:1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
+  border-top: 1px solid rgb(255, 255, 255);
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  position: relative;
+  text-indent: -190px; /* Adjust the value to increase or decrease the spacing from the left side */
+}
+
+#terminalTextInput::placeholder {
+  
+  text-align: left;
+  padding-left: 190px;
+  opacity: 1;
+
+}
+
+
+
+
+#terminalTextInput-nav {
+  background: rgb(29, 29, 29);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 0 0 4px 4px;
+  width: 18rem;
+  height: 2rem;
+  padding: 12px;
+  font-size: 16px;
+  outline: none;
+  text-align: left;
+}
+
+
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@-moz-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@-o-keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+@keyframes slideDownAnimation {
+  0% {
+    margin-top: -20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .gradientCont {
+    height: 220px;
+  }
+  .mainCont {
+    width: 100%;
+    padding: 0 12px;
+  }
+  .mainCont h2 {
+    font-size: 32px;
+    margin: 40px 0 0 0;
+  }
+  .mainCont h3 {
+    font-size: 16px;
+    margin: 0 0 40px 0;
+  }
+  #terminalReslutsCont {
+    height: 100px;
+  }
+}
+
+
