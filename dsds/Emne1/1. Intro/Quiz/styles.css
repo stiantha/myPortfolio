@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(42, 42, 42);
+    color: white;
+    margin-left: 3rem;
+    padding: 3rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+div#S2{
+    visibility: hidden;
+}
+
+div#S3{
+    visibility: hidden;
+}
+
+p{
+    display: none;
+    margin-left: 2rem;
+    margin-top: 0;
+    font-size: 2rem;
+}
+
+.answer {
+    display: flex;
+}
+
+button{
+    display: block;
+    width: 15rem;
+    height: 3rem;
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}

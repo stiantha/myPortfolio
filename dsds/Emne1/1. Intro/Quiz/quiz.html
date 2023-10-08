@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=styles.css>
+    <title>Quiz</title>
+</head>
+<body>
+    
+    
+    <div id="S1"> 
+        <h2>Hva er 2+2? </h2>
+        <div class="answer">
+            <button onclick="S1answerWrong1()">3</button> <p id="S1printWrong1">Feil!</p>
+        </div>
+        <div class="answer">
+            <button onclick="S1answerCorrect()">4</button> <p id="S1printCorrect">Riktig!</p>
+        </div>
+        <div class="answer">
+            <button onclick="S1answerWrong2()">5</button> <p id="S1printWrong2">Feil!</p>
+        </div>
+    </div>
+
+    
+    
+ <div id="S2">  
+    
+     <h2>Hva er hovedstaden i Norge?</h2> 
+     <div class="answer">
+        <button onclick="S2answerCorrect()">Oslo</button> <p id="S2printCorrect">Riktig!</p>
+    </div>
+    <div class="answer">
+        <button onclick="S2answerWrong1()">Larvik</button> <p id="S2printWrong1">Feil!</p>
+    </div>
+    <div class="answer">
+        <button onclick="S2answerWrong2()">Stavern</button> <p id="S2printWrong2">Feil!</p>
+    </div>
+</div>
+
+    
+<div id="S3">
+    
+    <h2>Hvor gammel er Terje?</h2>
+    <div class="answer">
+        <button onclick="S3answerWrong1()">58</button> <p id="S3printWrong1">Feil!</p>
+    </div>
+    <div class="answer">
+        <button onclick="S3answerWrong2()">38</button> <p id="S3printWrong2">Feil!</p>
+    </div>
+    <div class="answer">
+        <button onclick="S3answerCorrect()">48</button> <p id="S3printCorrect">Riktig!</p>
+    </div>
+</div>
+
+<p id="S3printComplete">Fullført!</p>
+
+<script src="function.js"></script>    
+</body>
+</html>

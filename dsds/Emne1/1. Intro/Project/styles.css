@@ -1,0 +1,61 @@
+:root {
+    --color-1: rgb(77, 188, 181);
+    --color-2: rgb(0, 141, 129);
+    --color-3: rgb(255, 255, 255);
+    --color-4: hsla(36, 72%, 80%, 1);
+    --color-5: rgb(1, 142, 161);
+    
+    --color-dark-1: rgb(0, 0, 0);
+    --color-dark-2: rgb(33, 33, 33);
+    --color-dark-3: rgb(44, 44, 44);
+    --color-dark-4: rgb(55, 55, 55);
+    --color-dark-5: rgb(66, 66, 66);
+}
+
+header {
+    height: 56rem;
+    width: 100vw;
+    margin-bottom: 1rem;
+    border-bottom: var(--color-2) solid 0.3rem;
+}
+
+footer{
+    height: 1rem;
+
+}
+
+body {
+    background-color: var(--color-dark-1);
+    color: var(--color-3);
+    height: 100%;
+    width: 100%;
+    min-height: 1080px;
+    min-width: 1920px;
+    max-height: 1440px;
+    max-width: 2560px;
+    overflow: hidden;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); /* Adjust column width as needed */
+    gap: 1rem;
+    grid-row-gap: 1rem;
+    margin: 0 auto; /* Center the grid within the container */
+    max-width: 95%; /* Limit the maximum width of the grid */
+}
+
+.square {
+    width: 100%;
+    height: 10rem; /* You can adjust the height as needed */
+    background-color: var(--color-1);
+    text-align: center;
+    line-height: 10rem;
+    border: var(--color-2) solid 0.3rem;
+}
+
+iframe{
+    border: none;
+    width: 100%;
+    height: 100%;
+}

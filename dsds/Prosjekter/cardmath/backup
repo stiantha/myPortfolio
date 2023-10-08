@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EqualsKing</title>
+    <meta name="description" content="" />
+    <meta name="author" content="SST" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2c2c2c;
+            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(13, auto);
+            grid-template-rows: repeat(5, auto);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .boardCards {
+            width: 100px;
+            height: 150px;
+            margin: 0.5rem;
+            cursor: pointer;
+        }
+
+        .card-container {
+            grid-row: 1 / 4;
+            grid-column: 1 / 13;
+            display: grid;
+            grid-template-columns: repeat(13, auto);
+            grid-template-rows: repeat(4, auto);
+        }
+
+        .card-container-play {
+            grid-row: 5 / 5;
+            grid-column: 1 / 13;
+            display: grid;
+            grid-template-columns: repeat(7, auto);
+            grid-template-rows: repeat(1, auto);
+            justify-content: center;
+            align-items: center;
+            gap: 5rem;
+
+
+        }
+
+        .card {
+            width: 100px;
+            height: 150px;
+            margin: 0.5rem;
+        }
+
+        #card1, #placeholder1 {
+            grid-row: 1 / 1;
+            height: 10rem;
+        }
+
+        .cardOperator {
+            grid-row: 1 / 1;
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        #card2, #placeholder2 {
+
+            grid-row: 1 / 1;
+            height: 10rem;
+        }
+
+        .card-equals {
+
+            grid-row: 1 / 1;
+            text-align: center;
+        }
+
+        .card-result {
+            grid-row: 1 / 1;
+            height: 10rem;
+        }
+
+        #resultCardImage {
+            width: 100px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" class="card-container"></div>
+    
+    
+    <div id="playCards" class="card-container-play">
+        <div id="card1"><img id="placeholder1" src="./Cards/JOKER-2.png"></div>
+        <div id="cardOperator" class="color"></div>
+        <div id="card2"><img id="placeholder2" src="./Cards/JOKER-2.png"></div>
+        <div id="cardEquals">=</div>
+        <div id="cardResult" title=""></div>
+        <div id="cardPoints"><span>Score</span><br>0</div>
+    </div>
+</body>
+
+<script>
+    let suits = ["SPADE-", "HEART-", "CLUB-", "DIAMOND-"];
+    let cards = [];
+    let shuffledCards = shuffle(cards);
+    let currentContainer = "card1";
+
+    cardLoop();
+
+    function cardLoop() {
+        for (let cardIndex = 1; cardIndex <= 52; cardIndex++) {
+            let suitIndex = Math.floor((cardIndex - 1) / 13);
+            let cardNumber = ((cardIndex - 1) % 13) + 1;
+            let cardId = `${suits[suitIndex]}${cardNumber}`;
+            cards.push({
+                id: cardId,
+                suit: suits[suitIndex],
+                number: cardNumber,
+            });
+        }
+    }
+
+    const operatorSymbols = ["+", "-", "×", "÷"];
+    displayShuffledCards();
+    displayRandomOperator();
+
+    function shuffle(array) {
+        let currentIndex = array.length,
+            temporaryValue,
+            randomIndex;
+
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
+    }
+
+    function displayShuffledCards() {
+        let shuffledCards = shuffle(cards);
+        const appContainer = document.getElementById("app");
+        const resultCard = document.getElementById("cardResult");
+
+        appContainer.innerHTML = '';
+
+        shuffledCards.forEach((card) => {
+            const cardElement = document.createElement("img");
+            cardElement.id = card.id;
+            cardElement.classList.add("boardCards");
+            cardElement.src = `./Cards/${card.id}.png`;
+            resultCard.title = card.id.split("-")[1];
+            resultCard.innerHTML = `<img id="resultCardImage" src="./Cards/${card.id}.png">`;
+            cardElement.addEventListener("click", () => {
+                appendCardToContainer(card.id);
+            });
+
+            appContainer.appendChild(cardElement);
+        });
+    }
+
+    function appendCardToContainer(cardId) {
+        const cardElement = document.getElementById(cardId);
+        const containerElement = document.getElementById(currentContainer);
+        if (cardElement && containerElement && (containerElement.childElementCount < 1 || containerElement.querySelector('[id^="placeholder"]'))) {
+            const clonedCard = cardElement.cloneNode(true);
+            containerElement.appendChild(clonedCard);
+            containerElement.removeChild(containerElement.firstChild);
+            calculate();
+            currentContainer = currentContainer === "card1" ? "card2" : "card1";
+        }
+    }
+
+    function displayRandomOperator() {
+        const cardOperatorElement = document.getElementById("cardOperator");
+
+        if (cardOperatorElement) {
+            const randomIndex = Math.floor(Math.random() * operatorSymbols.length);
+            const randomOperator = operatorSymbols[randomIndex];
+            cardOperatorElement.textContent = randomOperator;
+        }
+    }
+
+    function calculate() {
+        const card1Element = document.getElementById("card1");
+        const card2Element = document.getElementById("card2");
+        const cardOperatorElement = document.getElementById("cardOperator");
+        const operator = cardOperatorElement.textContent;
+
+        if (card1Element && card2Element && operator) {
+            const card1Id = card1Element.firstChild.id;
+            const card2Id = card2Element.firstChild.id;
+            const card1Number = card1Id.split("-")[1];
+            const card2Number = card2Id.split("-")[1];
+
+            let result = 0;
+            if (operator === "+") {
+                result = parseInt(card1Number) + parseInt(card2Number) || parseInt(card2Number) + parseInt(card1Number);
+            } else if (operator === "-") {
+                result = parseInt(card1Number) - parseInt(card2Number) || parseInt(card2Number) - parseInt(card1Number);
+            } else if (operator === "×") {
+                result = parseInt(card1Number) * parseInt(card2Number) || parseInt(card2Number) * parseInt(card1Number);
+            } else if (operator === "÷") {
+                result = parseInt(card1Number) / parseInt(card2Number) || parseInt(card2Number) / parseInt(card1Number);
+            }
+
+            const cardResultElement = document.getElementById("cardResult");
+            const cardPointsElement = document.getElementById("cardPoints");
+            const points = parseInt(cardPointsElement.textContent.split(":")[1]);
+            const cardResult = parseInt(cardResultElement.title);
+
+            if (result === cardResult) {
+                cardPointsElement.textContent = `Score:${points + result}`;
+                card1Element.removeChild(card1Element.firstChild);
+                card2Element.removeChild(card2Element.firstChild);
+                card1Element.innerHTML = `<img id="placeholder1" src="./Cards/JOKER-2.png">`;
+                card2Element.innerHTML = `<img id="placeholder2" src="./Cards/JOKER-2.png">`;
+                console.log(card1Number + "", operator, "" + card2Number, "equals " + cardResult);
+                console.log("Correct Answer!", cardResult, "added to score");
+                displayShuffledCards();
+                displayRandomOperator();
+            }
+            if (result !== cardResult && card1Number >= 1 && card2Number >= 1) {
+                card1Element.removeChild(card1Element.firstChild);
+                card2Element.removeChild(card2Element.firstChild);
+                card1Element.innerHTML = `<img id="placeholder1" src="./Cards/JOKER-2.png">`;
+                card2Element.innerHTML = `<img id="placeholder2" src="./Cards/JOKER-2.png">`;
+                console.log(card1Number + "", operator, "" + card2Number, "is not equal to " + cardResult);
+                console.log("Wrong Answer!");
+                displayShuffledCards();
+                displayRandomOperator();
+            }
+        }
+    }
+</script>
+
+</html>

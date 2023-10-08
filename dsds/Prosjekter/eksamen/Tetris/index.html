@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1012</title>
+    <style>
+      body {
+        background-color: rgb(36, 36, 36);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+      }
+
+      #board{
+        display: grid;
+        grid-template-columns: repeat(4, 4rem);
+        grid-template-rows: repeat(4, 4rem);
+        justify-content: center;
+        gap: 1rem; /* Optional: Add gap between grid items */
+      }
+
+      #board > div {
+        border: 1px solid gray;
+      }
+
+      #shapes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 1rem;
+      }
+
+      #rotate{
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+      }
+
+      button {
+        background-color: rgb(76, 76, 76);
+        color: white;
+        width: 4rem;
+        height: 3rem;
+        font-size: 2rem;
+        opacity: 0.6;
+        
+      }
+
+      button:hover{
+        opacity: 1;
+        border: 1px solid white;
+      }
+
+      label{
+        display: flex;
+        color: white;
+        justify-content: center;
+        margin-top: 1rem;
+        font-size: 2rem;
+        opacity: 0.6;
+      }
+    </style>
+    <script src="controller.js"></script>
+  </head>
+
+  <body onload="init()">
+    <div id="app"></div>
+    <script>
+      // Model
+      let board = Array(16).fill("");
+
+      // View
+      function updateView() {
+        let squaresHtml = "";
+        for (let color of board) {
+          squaresHtml += /*HTML*/ `
+                    <div style="background-color: ${color}"></div>
+                `;
+        }
+
+        document.getElementById("app").innerHTML = /*HTML*/ `
+                <div id="board">
+                    ${squaresHtml}
+                </div>
+                <label>Endre eller roter figur</label>
+                <div id="shapes">
+                    <button onclick="addShape([1, 5, 9, 10], 'darkblue')">L</button>
+                    <button onclick="addShape([1, 5, 6, 9], 'orange')">T</button>
+                    <button onclick="addShape([1, 5, 9, 13], 'purple')">I</button>   
+                </div>
+                <div id="rotate">
+                    <button onclick="rotate()">↺</button>
+                </div>
+            `;
+      }
+    </script>
+  </body>
+</html>

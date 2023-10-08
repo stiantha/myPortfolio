@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Github Link Generator</title>
+  <style>
+    body {
+      width: auto;
+      height: 100vh;
+      color: white;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(34, 34, 34);
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    #app {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(-45deg, #1c1c1c, #2e2e2e);
+      background-size: 800% 800%;
+      animation: gradient 5s ease infinite;
+      padding: 20px;
+      gap: 0.2rem;
+      width: 30rem;
+      height: 38rem;
+      border-radius: 2rem;
+      justify-content: center;
+      border: 4px solid rgb(17, 173, 147);
+      box-shadow: 0 0 50px 0px  rgb(17, 173, 147);
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    #input-info {
+      display: flex;
+      text-align: left;
+      flex-direction: column;
+      margin-left: 5rem;
+      margin-bottom: 1rem;
+      margin-top: 4rem;
+      width: auto;
+    }
+
+    #output-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    input {
+      text-align: center;
+      background-color: #64646300;
+      padding: 0.3rem;
+      border: none;
+      outline: none;
+      font-size: 1.4rem;
+      max-height: 6rem;
+      color: rgb(255, 255, 255);
+      margin-bottom: 1rem;
+      width: 20rem;
+      border-bottom: white 2px solid;
+    }
+
+    label {
+      margin-right: 14rem;
+      text-align: left;
+      justify-self: left;
+      justify-content: left;
+    }
+
+    button {
+      margin-top: 2rem;
+      border-radius: 5rem;
+      width: 10rem;
+      height: 3rem;
+      background-color: #3c3c3c00;
+      color: white;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 10px 0px  rgb(255, 255, 255);
+      outline: none;
+      border: solid 1px rgb(34, 34, 34);
+      display: block;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #ffffff;
+      font-size: 3rem;
+    }
+
+    button:hover {
+      border: 3px white solid;
+    }
+
+    #projectText {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body onload="updateView()">
+  <div id="app"></div>
+  <script>
+    // Model
+    let github = "";
+    let main = "";
+    let secondary = "";
+    let folder = "";
+
+    // Retrieve values from cookies if available
+    const savedGithub = getCookie("github");
+    const savedMain = getCookie("main");
+    const savedSecondary = getCookie("secondary");
+    const savedFolder = getCookie("folder");
+
+    if (savedGithub) github = savedGithub;
+    if (savedMain) main = savedMain;
+    if (savedSecondary) secondary = savedSecondary;
+    if (savedFolder) folder = savedFolder;
+
+    // View
+    function updateView() {
+      const app = document.getElementById("app");
+      app.innerHTML = /*html*/ `
+            <h1>to:terje</h1>
+            <section id="input-info">
+                <label for="github">Github Username</label>
+                <input id="github" type="text" value="${github}" placeholder="">
+                <label for="filepath">Main Folder</label>
+                <input id="filepath" type="text" value="${main}" placeholder="">
+                <label for="secondary">Secondary Folder</label>
+                <input id="secondary" type="text" value="${secondary}" placeholder="">
+                <label id="projectText" for="project">Project</label>
+                <input id="project" type="text" value="${folder}" placeholder="">
+            </section>
+
+            <section id="output-links">
+                <button id="copyLinks" onclick="generateLinks()">Copy</button>
+            </section>
+        `;
+
+      const inputs = ['github', 'filepath', 'secondary', 'project'];
+      inputs.forEach(inputId => {
+        const input = document.getElementById(inputId);
+        input.addEventListener("input", updateOutput);
+      });
+
+      updateOutput();
+    }
+
+    function updateOutput() {
+      github = document.getElementById("github").value;
+      main = document.getElementById("filepath").value;
+      secondary = document.getElementById("secondary").value;
+      folder = document.getElementById("project").value;
+    }
+
+    // Controller
+    function generateLinks() {
+      const ioLink = `https://${github}.github.io/${main}/${secondary}/${folder}/index.html`;
+      const repoLink = `https://github.com/${github}/${main}/tree/main/${secondary}/${folder}`;
+
+      setCookie("github", github);
+      setCookie("main", main);
+      setCookie("secondary", secondary);
+      setCookie("folder", folder);
+
+      const tempInput = document.createElement("textarea");
+      document.body.appendChild(tempInput);
+      tempInput.value = ioLink + "\n" + repoLink;
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+      document.getElementById("copyLinks").innerHTML = "Copied!";
+      document.getElementById("copyLinks").style.boxShadow = "0 0 20px 0 rgb(17, 173, 147)";
+    }
+
+    function setCookie(name, value) {
+      document.cookie = `${name}=${value}`;
+    }
+
+    function getCookie(name) {
+      const cookies = document.cookie.split("; ");
+      for (const cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split("=");
+        if (cookieName === name) {
+          return cookieValue;
+        }
+      }
+      return null;
+    }
+  </script>
+</body>
+
+</html>
