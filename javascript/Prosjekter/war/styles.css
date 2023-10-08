@@ -1,0 +1,108 @@
+:root {
+    --color-primary: rgb(72, 72, 72);
+  }
+  
+  html, body {
+    background: #191A1D;
+    font-family: 'Karla', sans-serif;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Use vh (viewport height) instead of vw */
+    overflow: hidden;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+    border: solid 2px #ffffff;
+    width: 40rem;
+    height: 50rem;
+    background-image: url("./assets/7330691.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 2rem;
+  }
+  
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 40rem;
+  }
+  
+  img {
+    border: #000000 solid 5px;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+    margin-top: 3.4rem;
+  }
+  
+  label {
+    font-size: 0rem;
+    color: #ffffff;
+    visibility: hidden;
+  }
+  
+  h1#enemyText {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    text-align: left;
+    margin-top: 0rem;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  h1#playerText {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-left: 12rem;
+    margin-top: 0rem;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+
+  span{
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  span#player1WinPercentage{
+    font-size: 1.5rem;
+    color: #ff0000;
+    position: absolute;
+    margin-bottom: 4rem;
+    margin-left: 10rem;
+    z-index: 999;
+  } 
+
+  span#player2WinPercentage{
+    font-size: 1.5rem;
+    color: #ffffff;
+    position: absolute;
+    color: #0ba800;
+    margin-right: 10rem;
+    margin-bottom: 4rem;
+    z-index: 999;
+  }
+
+  span#tiePercentage{
+    font-size: 1.2rem;
+    color: #ffffff;
+    position: absolute;
+    margin-bottom: 4rem;
+    font-weight: bold;
+    /*background-color: #000000;*/
+    text-align: center;
+    width: 12.5%;
+    border-radius: 5px;
+    z-index: 0;
+  }
+  

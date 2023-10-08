@@ -1,0 +1,89 @@
+/* Define a primary color variable */
+:root {
+    --color-primary: rgb(72, 72, 72);
+}
+
+/* Apply styles to the whole page */
+html, body {
+    background: #191A1D;
+    font-family: 'Karla', sans-serif;
+    color: white;
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+/* Style for the main container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 40rem;
+    height: 50rem;
+}
+
+/* Style for the button container */
+.container-buttons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem; /* Add margin to the top */
+    padding: 1rem;
+    align-items: center;
+    color: violet;
+
+}
+
+.container-data {
+    margin-top: 1rem;
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+
+}
+
+/* Style for the table */
+table {
+    width: 10rem;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+/* Style for table rows */
+tr {
+    border-bottom: 1px solid white;
+}
+
+/* Style for table cells */
+td {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+/* Style for labels within table cells */
+label {
+    display: block;
+    font-weight: bold;
+}
+
+/* Style for data within table cells */
+span {
+    display: block;
+    margin-top: 0.3rem;
+}
+
+/* Style for buttons */
+button {
+    margin-left: 1rem;
+    height: 5rem;
+    width: 5rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}

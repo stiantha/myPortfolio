@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="date" style="font-size: 300%;"></div>
+        <div id="Day" style="font-size: 300%;"><span>Dag: </span>1</div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <button onclick="selectDay()">▲</button>
+            <button onclick="selectDay2()">▼</button>
+        
+    </div>
+
+    
+        <div id="Month" style="font-size: 300%;"><span>Måned: </span>1</div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <button onclick="selectMonth()">▲</button>
+            <button onclick="selectMonth2()">▼</button>
+        </div>
+    
+        <div id="Year" style="font-size: 300%;"><span>År: </span>2023</div>
+        <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <button onclick="selectYear()">▲</button>
+            <button onclick="selectYear2()">▼</button>
+        </div>
+    </div>
+<div>
+<script>
+    
+var day = 1;
+var month = 1;
+var year = 2023;
+
+const selectedDay = document.getElementById("Day");
+const selectedMonth = document.getElementById("Month");
+const selectedYear = document.getElementById("Year");
+const printDate = document.getElementById("date");
+
+function updateDate() {
+    printDate.textContent = `${day}.${month}.${year}`;
+}
+
+updateDate();
+
+// Day
+function selectDay() {
+    if (day < 31) {
+        day++;
+        updateDate();
+    }
+    selectedDay.innerHTML = `<span>Dag: </span>${day}`;
+}
+
+function selectDay2() {
+    if (day > 1) {
+        day--;
+        updateDate();
+    } else {
+        day = 1;
+    }
+    selectedDay.innerHTML = `<span>Dag: </span>${day}`;
+    
+}
+
+// Month
+function selectMonth() {
+    if (month < 12) {
+        month++;
+        updateDate();
+    }
+    selectedMonth.innerHTML = `<span>Måned: </span>${month}`;
+}
+
+function selectMonth2() {
+    if (month > 1) {
+        month--;
+        updateDate();
+    } else {
+        month = 1;
+    }
+    selectedMonth.innerHTML = `<span>Måned: </span>${month}`;
+}
+
+// Year
+function selectYear() {
+    if (year < 2100) {
+        year++;
+        updateDate();
+    }
+    selectedYear.innerHTML = `<span>År: </span>${year}`;
+}
+
+function selectYear2() {
+    if (year > 1900) {
+        year--;
+        updateDate();
+    }
+    selectedYear.innerHTML = `<span>År: </span>${year}`;
+}
+
+
+    
+
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

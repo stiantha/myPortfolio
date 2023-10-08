@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Document</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <pre id="output"></pre>
+    <script>
+        let hashCount = 8;
+
+        for(let rowIndex = 3; rowIndex >= 0; rowIndex--) {
+            for(let columnIndex = 0; columnIndex < 7; columnIndex++) {
+                if(rowIndex === columnIndex || rowIndex + columnIndex === 6) {
+                    writeHash();
+                } else {
+                    writeSpace();
+                }
+            }
+            writeLineBreak();
+        }
+
+
+        function writeHash() {
+            document.getElementById('output').innerText += '#';
+        }
+    
+        function writeSpace() {
+            document.getElementById('output').innerText += ' ';
+        }
+    
+        function writeLineBreak() {
+            document.getElementById('output').innerText += '\n';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <select onchange="selectFontFamily(this.value)">
+        <option>Arial</option>
+        <option>Verdana</option>
+        <option>Tahoma</option>
+        <option>Trebuchet MS</option>
+        <option>Times New Roman</option>
+        <option>Georgia</option>
+        <option>Garamond</option>
+        <option>Courier New</option>
+        <option>Brush Script MT</option>
+    </select>
+
+    <button id="more reds">more reds</button>
+    <button id="more greens">more greens</button>
+    <button id="more blues">more blues</button>
+    <button onclick="addSize()">more size</button>
+    <button onclick="lessSize()">less size</button>
+    <button onclick="location.reload()">reset</button>
+    
+    <div id="info">Text
+    </div>
+
+    <script>
+        
+        let redValue = 125;
+        let greenValue = 125;
+        let blueValue = 125;
+        let fontSizer = 30;
+        
+        document.getElementById('info').style.fontSize = `${fontSizer}pt`;
+
+
+        function addSize() {
+             fontSizer ++;
+             document.getElementById('info').style.fontSize = `${fontSizer}pt`;
+        }
+
+        function lessSize() {
+            fontSizer --;
+            document.getElementById('info').style.fontSize = `${fontSizer}pt`;
+        }
+
+
+
+        function selectFontFamily(fontFamily){
+            document.getElementById('info').innerHTML = `Du har valgt ${fontFamily}.`;
+            document.getElementById('info').style.fontFamily = fontFamily;
+        }
+
+
+        document.getElementById('more reds').addEventListener('click', function() {
+            redValue += 10;
+            document.getElementById('info').style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+        });
+
+        document.getElementById('more greens').addEventListener('click', function() {
+            greenValue += 10;
+            document.getElementById('info').style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+        });
+
+        document.getElementById('more blues').addEventListener('click', function() {
+            blueValue += 10;
+            document.getElementById('info').style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+        });
+    </script>
+</body>
+</html>

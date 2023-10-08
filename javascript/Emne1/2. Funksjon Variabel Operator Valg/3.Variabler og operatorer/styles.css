@@ -1,0 +1,57 @@
+:root {
+    --dark: rgb(0, 0, 0);
+    --white: rgb(255, 255, 255);
+    --darkgray: rgb(14, 14, 14);
+    --lightgray: rgb(20, 20, 20);
+
+    --title-color: rgb(241, 242, 243);
+    --text-color: rgb(255, 255, 255);
+    --body-color: rgb(32, 32, 32);
+    --container-color: rgb(255, 255, 255);
+
+    --body-font: "Poppins", sans-serif;
+    --biggest-font-size: 2rem;
+    --bigger-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+}
+
+body {
+    background-color: var(--body-color);
+    font-family: var(--body-font);
+    color: var(--text-color);
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.flex-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    text-align: center;
+    font-size: 1.6rem;
+    height: 4rem;
+    width: 10rem;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: transform 0.3s;
+    background-color: var(--darkgray);
+    color: var(--white);
+    border: none;
+}
+
+button:hover {
+    transform: translateY(-0.25rem);
+    background-color: var(--lightgray);
+}

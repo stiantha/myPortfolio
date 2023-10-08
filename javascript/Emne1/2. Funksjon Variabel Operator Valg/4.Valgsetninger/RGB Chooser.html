@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <input
+        type="range"
+        min="0"
+        max="255"
+        step="1"
+        value="60"
+        class="slider"
+        id="red"
+        oninput="colorBox()"
+    />
+    <input
+        type="range"
+        min="0"
+        max="255"
+        step="1"
+        value="230"
+        class="slider"
+        id="green"
+        oninput="colorBox()"
+    />
+    <input
+        type="range"
+        min="0"
+        max="255"
+        step="5"
+        value="110"
+        class="slider"
+        id="blue"
+        oninput="colorBox()"
+    />
+    <p><span id="valueRGB" onclick="copyToClipboard(this.innerHTML)">(0, 0, 0)</span></p>
+    <script>
+        let colortext = document.getElementById("valueRGB"); // Declare it in the global scope
+
+        colorBox(); // to set the color of the box when the page loads
+
+        function colorBox() {
+            let red = document.getElementById("red").value;
+            let green = document.getElementById("green").value;
+            let blue = document.getElementById("blue").value;
+            let value = `rgb(${red}, ${green}, ${blue})`;
+            let box = document.querySelector(".box");
+            let sliders = document.getElementsByClassName("slider");
+
+            document.getElementById("valueRGB").innerHTML = value;
+            box.style.backgroundColor = value;
+            colortext.style.color = value;
+
+            // Set background color for all sliders
+            for (let i = 0; i < sliders.length; i++) {
+                sliders[i].style.accentColor = value;
+            }
+        }
+
+        function copyToClipboard(text) {
+            if (!text) {
+                colortext.innerHTML = 'No text to copy!';
+                return;
+            }
+
+            navigator.clipboard.writeText(text)
+                .then(() => {
+                    console.log('Text copied to clipboard');
+                    colortext.innerHTML = 'Copied!';
+                })
+                .catch(err => {
+                    console.error('Error copying text to clipboard:', err);
+                    colortext.innerHTML = 'Failed to Copy!';
+                });
+        }
+    </script>
+</body>
+</html>

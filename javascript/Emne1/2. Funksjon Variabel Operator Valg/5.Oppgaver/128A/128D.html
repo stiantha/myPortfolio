@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Document</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <div class="container-buttons" id="buttons">
+            <button id="playRock" onclick="game()">Stein</button>
+            <button id="playScissors" onclick="game()">Saks</button>
+            <button id="playPaper" onclick="game()">Papir</button>
+        </div>
+        
+    <div class="container-data" id="data">
+            <h1 id="result">choose</h1>
+        </div>
+    </div>
+    <script>
+
+    var playRock = document.getElementById("playRock");
+    var playScissors = document.getElementById("playScissors");
+    var playPaper = document.getElementById("playPaper");
+    var result = document.getElementById("result");
+    var computerChoice = getRandomNumber(1, 3);
+
+    function getRandomNumber(min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+    }
+
+    function game(){
+        if (computerChoice === 1) {
+            if (playRock) {
+                result.textContent = "Draw";
+            } else if (playScissors) {
+                result.textContent = "You lose";
+            } else if (playPaper) {
+                result.textContent = "You win";
+            }
+        } else if (computerChoice === 2) {
+            if (playScissors) {
+                result.textContent = "You win";
+            } else if (playScissors) {
+                result.textContent = "Draw";
+            } else if (playPaper) {
+                result.textContent = "You lose";
+            }
+        } else if (computerChoice === 3) {
+            if (playPaper) {
+                result.textContent = "You lose";
+            } else if (playScissors) {
+                result.textContent = "You win";
+            } else if (playPaper) {
+                result.textContent = "Draw";
+            }
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+@import url('https://fonts.cdnfonts.com/css/the-led-display-st');
+
+body {
+  background-color: rgb(28, 28, 28);
+  color: white;
+  overflow-y: hidden;
+}
+
+#app {
+  background-color: #1a1a1a;
+  border: 5px solid #333;
+  width: 50rem;
+  height: 55rem;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+  gap: 10px;
+  border-radius: 30px;
+}
+
+.coin > img {
+  height: 5rem;
+}
+
+.coke > img {
+  height: 15rem;
+}
+
+.coke > img:hover{
+  opacity: 0.8;
+}
+
+
+
+.coins {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  height: 12rem;
+}
+
+@keyframes playGif {
+  0% { opacity: 1; } /* Start with full opacity */
+  20% { opacity: 1; } /* Keep full opacity for 20% of the animation duration (1 second) */
+  80% { opacity: 1; } /* Keep full opacity for 80% of the animation duration (4 seconds) */
+  100% { opacity: 0; } /* Fade out completely at the end (5 seconds) */
+}
+
+
+.coin {
+  height: 0.5rem;
+  overflow: visible;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 40rem;
+}
+
+.container_cokes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.coke {
+  border: rgb(67, 67, 67) 3px solid;
+  background-color: rgb(20, 20, 20);
+  border-radius: 10px;
+  height: 99%;
+}
+
+button {
+  display: inline-block;
+  background-color: rgb(29, 29, 29);
+  color: white;
+  border: 2px solid rgb(78, 77, 77);
+  border-radius: 20px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 10rem;
+}
+
+button:hover {
+  border: 2px solid rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.panel {
+  line-height: 1rem;
+  height: 44rem;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  width: 23rem;
+}
+
+.coinsReturn {
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  width: 24rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: #494545 3px solid;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+}
+
+.coinsIntake {
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  width: 24rem;
+  margin-bottom: 1rem;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: #494545 3px solid;
+  border-radius: 1rem;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.delivery {
+  margin-top: 0.5rem;
+  height: 6rem;
+  width: 23rem;
+  background-color: rgb(20, 20, 20);
+  border: #494545 3px solid;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+#led-display {
+  margin-top: -1.8rem;
+  height: 8rem;
+  width: 24rem;
+  margin-bottom: 0.2rem;
+  background-color: rgb(20, 20, 20);
+  border: #494545 3px solid;
+  border-radius: 5px;
+  display: flex;
+  justify-content: start;
+  text-align: left;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  font-family: 'The Led Display St', sans-serif;
+}
+
+
+/* justere utseende på scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.terje {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-image: url(./img/terje.gif);
+  height: 15rem;
+  width: 25rem;
+  border-radius: 10px;
+}

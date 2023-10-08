@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #board {
+            display: grid;
+            grid-template-columns: repeat(8, 100px);
+            grid-template-rows: repeat(8, 100px);
+        }
+
+        #board>div {
+            border: 1px solid lightblue;
+        }
+
+        .selected {
+            background-color: yellow;
+        }
+    </style>
+    <div id="board">
+    </div>
+
+    <button id="left" onclick="goLeft()">Venstre</button>
+    <button id="right" onclick="goRight()">Høyre</button><br>
+    <button id="up" onclick="goUp()">Opp</button>
+    <button id="down" onclick="goDown()">Ned</button>
+    <label id="currentSquare"">selectedSquareIndex;</label>
+    <script>
+        
+        
+        let selectedSquareIndex = 7;
+        const size = 64;
+
+        function goLeft() {
+                selectedSquareIndex--;
+                showBoard();
+            }
+            function goRight() {
+                selectedSquareIndex++;
+                showBoard();
+            }
+            function goUp() {
+                if (selectedSquareIndex > 7) {
+                    selectedSquareIndex -= 8;
+                }
+                showBoard();
+            }
+            function goDown() {
+                if (selectedSquareIndex < 56) {
+                    selectedSquareIndex += 8;
+                }
+                showBoard();
+            }
+
+            showBoard();
+            
+            function showBoard() {
+           
+                 
+            const pattern = '<div></div>';
+            const board = document.getElementById('board');
+            const selectedSquare = '<div class="selected"></div>';
+            const divToAdd = document.createElement('div'); 
+
+            // valgte ruten
+            const lengthPart1 = selectedSquareIndex;
+            const part1 = pattern.repeat(lengthPart1);
+            
+            // alle rutene som ikke er valgt før den valgte
+            const lengthPart3 = size - (selectedSquareIndex + 1);
+            const part3 = pattern.repeat(lengthPart3);
+
+            // Oppdatere board
+            board.innerHTML = part1 + selectedSquare + part3;  
+            // Legge til divs
+            board.appendChild(divToAdd.cloneNode(true));
+
+            const currentSquareValueElement = document.getElementById('currentSquare');
+            currentSquareValueElement.textContent = selectedSquareIndex;
+            }
+
+
+    </script>
+</body>
+
+</html>

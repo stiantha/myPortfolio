@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stian T</title>
+    <meta name="description" content="" />
+    <meta name="author" content="SS" />
+</head>
+<style>
+    body {
+        background-color: #2c2c2c;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        gap: 1rem;
+        overflow: hidden;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(14, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 1rem;
+        background-color: #2c2c2c;
+    }
+
+    .card-container-play {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 0.4rem;
+        height: 100%;
+        background-color: #2c2c2c;
+    }
+
+    .card-container-play div {
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .card-container-play div#cardReset,
+    #cardPoints {
+        display: flex;
+        flex-direction: column;
+        height: 174px;
+        width: 300px;
+        border-radius: 5px;
+        margin-left: 2rem;
+        font-size: 5rem;
+        max-width: 8rem;
+        color: white;
+        background-image: url("./back.png");
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #cardEquals,
+    #cardOperator {
+        display: flex;
+        flex-direction: column;
+        height: 174px;
+        width: 2rem;
+        border-radius: 5px;
+        margin-left: 0;
+        font-size: 5rem;
+        max-width: 8rem;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+
+    #cardBack {
+        height: 174px;
+        width: auto;
+        border-radius: 5px;
+        margin-left: 0;
+        max-width: 8rem;
+    }
+
+    #cardResult {
+        display: flex;
+        flex-direction: column;
+        height: 174px;
+        width: 300px;
+        border-radius: 5px;
+        margin-left: 0;
+        font-size: 5rem;
+        color: rgb(0, 0, 0);
+        background-color: white;
+        max-width: 8rem;
+    }
+
+    #card1,
+    #placeholder1,
+    #card2,
+    #placeholder2 #placeholder {
+        display: flex;
+        flex-direction: column;
+        height: 174px;
+        width: 300px;
+        border-radius: 5px;
+        margin-left: 0;
+        font-size: 5rem;
+        color: rgb(0, 0, 0);
+        background-image: radial-gradient(circ);
+        background-color: white;
+        max-width: 8rem;
+    }
+
+    #console {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 28rem;
+        height: 9rem;
+        background-color: #242424;
+        color: #fff;
+        border: 2px solid #585858;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: 'Courier New', monospace;
+    }
+
+    #console-output {
+        font-size: 1rem;
+
+    }
+
+    #console-help {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 28rem;
+        height: 9rem;
+        background-color: #242424;
+        color: #fff;
+        border: 2px solid #585858;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: 'Courier New', monospace;
+        overflow: hidden;
+    }
+
+    #console-input {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        color: #fff;
+        outline: none;
+        font-size: 2rem;
+    }
+
+    #console-output-rules {
+        left: 0;
+        bottom: 0;
+    }
+
+    #placeholder {
+        image-resolution: 300dpi;
+        image-rendering: auto;
+        image-rendering: crisp-edges;
+        image-rendering: pixelated;
+        width: 11rem;
+    }
+
+    /*RESPONSIVE*/
+
+    @media screen and (max-width: 1400px) {
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            gap: 1rem;
+            background-color: #2c2c2c;
+        }
+
+    }
+
+    @media screen and (max-width: 1600px) {
+
+        #console,
+        #console-help,
+        #console-input,
+        #console-output,
+        #console-output-rules {
+            width: 20%;
+        }
+
+    }
+
+    @media screen and (max-width: 1800px) {
+        #cardPoints {
+            position: fixed;
+            bottom: 8rem;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .card-container-play {
+            position: fixed;
+            bottom: 5rem;
+            gap: 2rem;
+            background-color: #2c2c2c;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            height: 5%;
+            width: 100%;
+        }
+    }
+</style>
+<body>
+    <div id="app" class="card-container"></div>
+    <div id="playCards" class="card-container-play">
+        <div id="card1"><img id="placeholder" src="./back.png"></div>
+        <div id="cardOperator"></div>
+        <div id="card2"><img id="placeholder" src="./back.png"></div>
+        <div id="cardEquals">=</div>
+        <div id="cardResult" title=""></div>
+        <div id="cardPoints">0</div>
+        <div id="console">
+            <pre id="console-output"></pre>
+        </div>
+        <div id="console-help">
+            <pre id="console-output-rules"></pre>
+            <input id="console-input" type="text" placeholder="!help">
+        </div>
+    </div>
+</body>
+<script>
+
+    //MODEL
+    let suits = ["SPADE-", "HEART-", "CLUB-", "DIAMOND-",];
+    let joker = ["JOKER-"];
+    let cards = [];
+    let shuffledCards = shuffle(cards);
+    let currentContainer = "card1";
+    let points = 0;
+    let result = 0;
+    const operatorSymbols = ["+", "-"]; //"x", "/"
+    const usedCardIds = new Set();
+
+    //INITIALIZE
+    function init() {
+        cardLoop();
+        shuffle(cards);
+        displayShuffledCards();
+        displayRandomOperator();
+    }
+    cardLoop();
+    shuffle(cards);
+    displayRandomOperator();
+    displayShuffledCards();
+
+    //VIEW
+    function displayShuffledCards() {
+
+        let shuffledCards = shuffle(cards);
+        const appContainer = document.getElementById("app");
+        const resultCard = document.getElementById("cardResult");
+        appContainer.innerHTML = '';
+        resultCard.innerHTML = '';
+
+        const cardElements = shuffledCards.map((card) => `
+        <img id="${card.id}" src="./Cards/${card.id}.png" onclick="appendCardToContainer('${card.id}')">`);
+        appContainer.innerHTML = cardElements.join('');
+
+        if (shuffledCards.length > 1) {
+            resultCard.title = shuffledCards[1].id.split("-")[1];
+            resultCard.innerHTML = `<img src="./Cards/${shuffledCards[1].id}.png">`;
+        }
+    }
+
+    //CONTROLLER
+
+    /*
+    Kjører en loop på 52 og legger dem i listen cards.
+    Kortene blir lagt i listen cards med id, suit og number. 
+    Number er også kortets verdi */
+    function cardLoop() {
+        for (let i = 1; i <= 4; i++) {
+            cards.push({
+                id: `JOKER-${i}`,
+                suit: "JOKER",
+                number: 0,
+            });
+        }
+        for (let cardIndex = 1; cardIndex <= 52; cardIndex++) {
+            let suitIndex = Math.floor((cardIndex - 1) / 13);
+            let cardNumber = ((cardIndex - 1) % 13) + 1;
+            let cardId = `${suits[suitIndex]}${cardNumber}`;
+            cards.push({
+                id: cardId,
+                suit: suits[suitIndex],
+                number: cardNumber,
+
+            });
+        }
+    }
+    function shuffle(array) {
+        let currentIndex = array.length,
+            temporaryValue,
+            randomIndex;
+
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array;
+    }
+
+    function appendCardToContainer(cardId) {
+        const cardElement = document.getElementById(cardId);
+        const containerElement = document.getElementById(currentContainer);
+
+        if (usedCardIds.has(cardId)) {
+            return;
+        }
+
+        if (cardElement && containerElement && containerElement.querySelector('[id="placeholder"]')) {
+            // The container is empty, so append the card
+            const clonedCard = cardElement.cloneNode(true);
+            containerElement.appendChild(clonedCard);
+            containerElement.removeChild(containerElement.firstChild);
+            cards = cards.filter((card) => card.id !== cardId);
+
+            // Add the card ID to the usedCardIds set
+            usedCardIds.add(cardId);
+
+            calculate();
+            currentContainer = currentContainer === "card1" ? "card2" : "card1";
+        }
+    }
+
+    function displayRandomOperator() {
+        const cardOperatorElement = document.getElementById("cardOperator");
+
+        if (cardOperatorElement) {
+            const randomIndex = Math.floor(Math.random() * operatorSymbols.length);
+            const randomOperator = operatorSymbols[randomIndex];
+            cardOperatorElement.textContent = randomOperator;
+        }
+    }
+
+    function calculate() {
+        const card1Element = document.getElementById("card1");
+        const card2Element = document.getElementById("card2");
+        const cardOperatorElement = document.getElementById("cardOperator");
+        const operator = cardOperatorElement.textContent;
+
+        if (card1Element && card2Element && operator) {
+            const card1Id = card1Element.firstChild.id;
+            const card2Id = card2Element.firstChild.id;
+            const card1Number = card1Id.split("-")[1];
+            const card2Number = card2Id.split("-")[1];
+
+        
+            if (operator === "+") {
+                result = parseInt(card1Number) + parseInt(card2Number) || parseInt(card2Number) + parseInt(card1Number);
+            } else if (operator === "-") {
+                result = Math.max(0, parseInt(card1Number) - parseInt(card2Number));
+            }
+
+            const cardResultElement = document.getElementById("cardResult");
+            const cardPointsElement = document.getElementById("cardPoints");
+            const cardResult = parseInt(cardResultElement.title);
+
+            if (result === cardResult) {
+                points += result;
+                cardPointsElement.innerHTML = `${points}`;
+                console.log(card1Number + "", operator, "" + card2Number, " blir " + cardResult);
+                console.log("Correct Answer!", cardResult, "added to score");
+                consoleOutput.textContent = card1Number + " " + operator + " " + card2Number + " = " + cardResult
+                    + "\nRiktig!✅\n🚀🙉✌✨\n🌠🎉🎈🎊" + "\n";
+
+                //Delay for overgang til neste runde
+                delay(1000).then(() => {
+                    card1Element.removeChild(card1Element.firstChild);
+                    card2Element.removeChild(card2Element.firstChild);
+                    card1Element.innerHTML = `<img id="placeholder" src="./back.png">`;
+                    card2Element.innerHTML = `<img id="placeholder" src="./back.png">`;
+                    displayShuffledCards();
+                    displayRandomOperator();
+                });
+            }
+            
+            if (result !== cardResult && card1Number >= 1 && card2Number >= 1) {
+                points -= cardResult;
+                cardPointsElement.innerHTML = `${points}`;
+                card1card2 = parseInt(card1Number) + parseInt(card2Number)
+                console.log(card1Number + "", operator, "" + card2Number, "is not equal to " + cardResult);
+                console.log("Wrong Answer!");
+                consoleOutput.textContent = card1Number + " " + operator + " " + card2Number + " = " + card1card2
+                    + "\nFeil Svar❌\nRiktig svar var " + cardResult + "\n😱😭😵" + "\n";
+                
+                //Delay for overgang til neste runde
+                delay(1000).then(() => {
+                    card1Element.removeChild(card1Element.firstChild);
+                    card2Element.removeChild(card2Element.firstChild);
+                    card1Element.innerHTML = `<img id="placeholder" src="./back.png">`;
+                    card2Element.innerHTML = `<img id="placeholder" src="./back.png">`;
+                    displayShuffledCards();
+                    displayRandomOperator();
+                });
+
+            }
+        }
+    }
+
+    //Delay
+    function delay(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+    }
+
+    //Input med output console for å vise regler og et output console for å vise resultat
+    const consoleInput = document.getElementById("console-input");
+    const consoleOutput = document.getElementById("console-output");
+    const consoleOutputRules = document.getElementById("console-output-rules");
+
+    consoleInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            const command = consoleInput.value;
+            consoleInput.value = "";
+            processCommand(command);
+        }
+    });
+
+
+    function processCommand(command) {
+        const output = `> ${command}\nJoker = 0 Ess = 1, Konge = 13.\nTrykk på kortene for å få dem til å dukke opp i regnestykket.\nVed riktig svar eller feil svar tildeles poengsummen til\nønsket resultat som pluss eller minus poeng.\n`;
+        consoleOutputRules.textContent = output;
+    }
+</script>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Traffic Light</title>
+  <style>
+    /* Your styles here */
+  </style>
+</head>
+<body>
+  <div class="trafficLight" onclick="goToNextPhase()">
+    <div class="light" id="redLight"></div>
+    <div class="light" id="yellowLight"></div>
+    <div class="light" id="greenLight"></div>
+  </div>
+  <div>
+    <button onclick="goToNextPhase()">Next Phase</button>
+  </div>
+</body>
+<script>
+let phase = 0;
+const red = document.getElementById("redLight");
+const yellow = document.getElementById("yellowLight");
+const green = document.getElementById("greenLight");
+
+
+
+function updateLightColors(red, yellow, green) {
+  if (phase === 0) {
+    red.style.backgroundColor = "red";
+    yellow.style.backgroundColor = "black";
+    green.style.backgroundColor = "black";
+  } else if (phase === 1) {
+    red.style.backgroundColor = "red";
+    yellow.style.backgroundColor = "yellow";
+    green.style.backgroundColor = "black";
+  } else if (phase === 2) {
+    red.style.backgroundColor = "black";
+    yellow.style.backgroundColor = "black";
+    green.style.backgroundColor = "green";
+  } else if (phase === 3) {
+    red.style.backgroundColor = "black";
+    yellow.style.backgroundColor = "yellow";
+    green.style.backgroundColor = "black";
+  }
+}
+
+function goToNextPhase() {
+  phase = (phase + 1) % 4;
+  updateLightColors();
+}
+
+// Initial setup
+updateLightColors();
+</script>
+</html>
