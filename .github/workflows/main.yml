@@ -1,35 +1,42 @@
-name: Deploy to GitHub Pages
-
+- name: Deploy to GH Page
+  uses: stiantha/github-pages-deploy-action@4.1.1
+  with:
+    branch: main  # Change this to your main branch
+    folder: portfolio  # Update this to your build output folder
+    single-commit: false
 on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: stiantha/stiantha.github.io # Specify your repository
-          path: stiantha.github.io # Specify the folder path
+          persist-credentials: false
 
       - name: Use Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16 # Adjust to your project's Node.js version
+        uses: actions/setup-node@v1
+        with: 
+          node-version: 16.15
 
-      - name: Install Dependencies
-        run: yarn install # Adjust to your package manager and command
+      - name: Install
+        run: yarn install
 
       - name: Build
-        run: yarn build # Adjust to your build command
+        run: yarn build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GH Page
         uses: stiantha/github-pages-deploy-action@4.1.1
         with:
-          branch: main # Use the main branch since your files are in the main branch
-          folder: stiantha.github.io/portfolio # Specify the folder where your built files are
+          branch: main
+          folder: stiantha.github.io/portfolio
           single-commit: false
