@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          persist-credentials: false
           repository: stiantha/stiantha.github.io # Specify your repository
+          path: stiantha.github.io # Specify the folder path
 
       - name: Use Node.js
         uses: actions/setup-node@v2
@@ -31,5 +31,5 @@ jobs:
         uses: stiantha/github-pages-deploy-action@4.1.1
         with:
           branch: main # Use the main branch since your files are in the main branch
-          folder: portfolio # Specify the folder where your built files are
+          folder: stiantha.github.io/portfolio # Specify the folder where your built files are
           single-commit: false
