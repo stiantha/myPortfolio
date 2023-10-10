@@ -16,10 +16,10 @@ jobs:
           repository: stiantha/stiantha.github.io # Specify your repository
           path: stiantha.github.io # Specify the folder path
 
-      - name: Use Node.js
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: 16 # Use Node.js version 16 or a more recent version
+          node-version: 16.x
 
       - name: Install Dependencies
         run: yarn install # Adjust to your package manager and command
