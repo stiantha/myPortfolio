@@ -1,33 +1,27 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  # Change this to your main branch name
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          repository: stiantha/stiantha.github.io # Specify your GitHub Pages repository
-          path: portfolio # Specify the folder path
 
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16.x
-
-      - name: Install Dependencies and Build
+      - name: Build site
         run: |
-          # Replace these commands with your actual build commands
-          npm install
-          npm run build
+          # Add commands to build your site here
+          # For example:
+          # npm install
+          # npm run build
 
       - name: Deploy to GitHub Pages
-        run: |
-          mv portfolio/* ./ # Move contents of "portfolio" to the root
-        shell: bash
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./portfolio/dist  # Specify the directory you want to publish
