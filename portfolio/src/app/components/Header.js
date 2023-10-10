@@ -1,10 +1,20 @@
 import routes from "@/consts/routes";
 import MediaIcon from "./MediaIcon";
 
+
 const paths = ["/", "/projects", "/about-me"]
 
 export default (t) => {
     return /*html*/ `
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <!-- CSP meta tag -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com;">
+
+
+
+        <!-- End of CSP meta tag -->
         <header class="header">
             <input class="hamburger" type="checkbox" aria-label="Menu" />
 
