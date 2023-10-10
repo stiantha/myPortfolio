@@ -30,9 +30,9 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Deploy to GH Page
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+      - name: Deploy to Main
+        uses: stiantha/github-pages-deploy-action@4.1.1
         with:
-          branch: gh-pages
-          folder: dist
+          branch: main
+          folder: stiantha.github.io/portfolio-main
           single-commit: false
