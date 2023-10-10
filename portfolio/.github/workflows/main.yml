@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
@@ -13,8 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
         with:
-          repository: stiantha/stiantha.github.io # Specify your repository
-          path: stiantha.github.io # Specify the folder path
+          repository: stiantha/stiantha.github.io # Specify your GitHub Pages repository
+          path: portfolio # Specify the folder path
 
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
@@ -23,12 +23,11 @@ jobs:
 
       - name: Install Dependencies and Build
         run: |
-          yarn install
-          yarn build
-        env:
-          NODE_OPTIONS: "--max-old-space-size=4096"
+          # Replace these commands with your actual build commands
+          npm install
+          npm run build
 
       - name: Deploy to GitHub Pages
         run: |
-          mv stiantha.github.io/portfolio/* ./
+          mv portfolio/* ./ # Move contents of "portfolio" to the root
         shell: bash
