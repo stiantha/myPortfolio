@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "main": "src/app/index.js",
+  "license": "MIT",
   "author": "Stian (https://stiantha.com)",
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
