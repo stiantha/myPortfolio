@@ -21,13 +21,14 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Install Dependencies
-        run: yarn install # Adjust to your package manager and command
-
-      - name: Build
-        run: yarn build # Adjust to your build command
+      - name: Install Dependencies and Build
+        run: |
+          yarn install
+          yarn build
+        env:
+          NODE_OPTIONS: "--max-old-space-size=4096"
 
       - name: Deploy to GitHub Pages
         run: |
-          mv stiantha.github.io/portfolio/* ./ # Move contents of "portfolio" to root
+          mv stiantha.github.io/portfolio/* ./
         shell: bash
