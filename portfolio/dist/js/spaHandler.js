@@ -15,7 +15,7 @@
   \*******************************/
 /***/ (() => {
 
-eval("\n// From https://github.com/rafgraph/spa-github-pages\n\nlet pathSegmentsToKeep = 0;\nlet l = window.location;\n\nl.replace(\n    l.protocol +\n        \"//\" +\n        l.hostname +\n        (l.port ? \":\" + l.port : \"\") +\n        l.pathname\n            .split(\"/\")\n            .slice(0, 1 + pathSegmentsToKeep)\n            .join(\"/\") +\n        \"/?/\" +\n        l.pathname\n            .slice(1)\n            .split(\"/\")\n            .slice(pathSegmentsToKeep)\n            .join(\"/\")\n            .replace(/&/g, \"~and~\") +\n        (l.search\n            ? \"&\" + l.search.slice(1).replace(/&/g, \"~and~\")\n            : \"\") +\n        l.hash\n);\n\n//# sourceURL=webpack://portfolio/./src/app/spaHandler.js?");
+eval("\r\n// From https://github.com/rafgraph/spa-github-pages\r\n\r\nlet pathSegmentsToKeep = 0;\r\nlet l = window.location;\r\n\r\nl.replace(\r\n    l.protocol +\r\n        \"//\" +\r\n        l.hostname +\r\n        (l.port ? \":\" + l.port : \"\") +\r\n        l.pathname\r\n            .split(\"/\")\r\n            .slice(0, 1 + pathSegmentsToKeep)\r\n            .join(\"/\") +\r\n        \"/?/\" +\r\n        l.pathname\r\n            .slice(1)\r\n            .split(\"/\")\r\n            .slice(pathSegmentsToKeep)\r\n            .join(\"/\")\r\n            .replace(/&/g, \"~and~\") +\r\n        (l.search\r\n            ? \"&\" + l.search.slice(1).replace(/&/g, \"~and~\")\r\n            : \"\") +\r\n        l.hash\r\n);\n\n//# sourceURL=webpack://portfolio/./src/app/spaHandler.js?");
 
 /***/ })
 
