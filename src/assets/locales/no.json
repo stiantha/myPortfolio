@@ -25,8 +25,8 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "👋<br>Stian, <span>Utvikler</span> med interesse innenfor<br><span>UI & UX Design</span>",
-        "description": "<br>kunnskap + 1%<br>estetikk + 3 <br> effektivitet + 0.3<br> halveisløsning - 1<br><br>resultat = en dag<br>resultat * 7 * 31 * 365",
+        "title": "👋<br>Stian<br> <span>Utvikler</span> med<br>interesse innenfor<br><span>UI & UX Design</span>",
+        "description": "<pre>function daily(){<br>kunnskap += 1%<br>estetikk += 3%<br>effektivitet += 1%<br>halveisløsning -= 1<br>}",
         "button": "Kontakt meg",
         "status": "Jobber for tiden med "
       },
@@ -39,9 +39,7 @@
       "about": {
         "title": "kort om meg",
         "description": [
-          "IT-utvikler i utdanning som elsker å lage egne prosjekter",
-          "Alltid nysgjerrig på å utforske nye rammeverk og kodespråk",
-          "Trives med å tilpasse meg raskt skiftende trender i bransjen", 
+          "Utforsker stadig nye rammeverk og kodespråk",
           "Vektlegger brukervennlige og estetisk tiltalende løsninger"
         ],
         "button": "Les mer"

@@ -113,5 +113,6 @@ module.exports = {
             new plugins.json(),
         ],
     },
+    
 
 };
