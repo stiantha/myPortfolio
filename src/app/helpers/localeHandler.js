@@ -1,4 +1,4 @@
-const defaultLocale = "en"
+const defaultLocale = "no"
 
 
 function setLocaleHander() {
