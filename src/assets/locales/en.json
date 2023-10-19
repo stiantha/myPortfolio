@@ -25,7 +25,7 @@
     "pages": {
       "home": {
         "hero": {
-          "title": "👋<br>Jeg heter <span>stian</span>, en <span>utvikler</span> med interesse innenfor <span>web-design</span>",
+          "title": "👋<br>Stian, <span>utvikler</span> med interesse innenfor <span>web-design</span>",
           "description": "<br>kunnskap + 1%<br>estetikk + 3 <br> effektivitet + 0.3<br> halveisløsning - 1<br><br>resultat = en dag<br>resultat * 7 * 31 * 365",
           "button": "Kontakt meg",
           "status": "Jobber for tiden med "
