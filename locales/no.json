@@ -1,1 +1,72 @@
-{"header":{"home":"home","projects":"prosjekter","about":"om-meg","contacts":"kontakt"},"footer":{"description":"kodingerbittelittegrannegøy","copyright":"- Stian Tharaldsen -","media":"Media"},"skills":{"language":"Språk","database":"Datalagring","other":"Markeringsspråk","framework":"Rammeverk","tool":"Annet"},"projects":{"toterje":{"name":"github link generator","description":"lager link til repo og github.io utifra personlige opplysninger som lagres lokalt via cookies"}},"pages":{"home":{"hero":{"title":"👋<br>Stian<br> <span>Utvikler</span> med<br>interesse innenfor<br><span>UI & UX Design</span>","description":"<pre>function daily(){<br>kunnskap += 1%<br>estetikk += 3%<br>effektivitet += 1%<br>halveisløsning -= 1<br>}","button":"Kontakt meg","status":"Jobber for tiden med "},"quote":{"text":"som en utvikler er det din jobb å sette deg selv ut av drift","author":"enellerannenluring"},"projects":{"title":"prosjekter","button":"Se alle"},"skills":{"title":"ferdigheter"},"about":{"title":"kort om meg","description":["Utforsker stadig nye rammeverk og kodespråk","Vektlegger brukervennlige og estetisk tiltalende løsninger"],"button":"Les mer"},"contacts":{"title":"kontakt","text":"","media":"kontakt meg her","donate":""}},"projects":{"description":"Mine prosjekter","decent":"store prosjekter","small":"små prosjekter","inProgress":"unfinished"},"about":{"description":"Hvem er jeg","about":{"description":["","",""]},"skills":{"title":"ferdigheter"},"facts":{"title":"fun-facts","list":["Liker vintern bedre enn sommern","ee","f","r","a","d"]}},"contacts":{"description":"Hvor du kan nå meg"}}}
+{
+  "header": {
+    "home": "home",
+    "projects": "prosjekter",
+    "about": "om-meg",
+    "contacts": "kontakt"
+  },
+  "footer": {
+    "description": "kodingerbittelittegrannegøy",
+    "copyright": "- Stian Tharaldsen -",
+    "media": "Media"
+  },
+  "skills": {
+    "language": "Språk",
+    "database": "Datalagring",
+    "other": "Markeringsspråk",
+    "framework": "Rammeverk",
+    "tool": "Annet"
+  },
+  "projects": {
+    "toterje": {
+      "name": "github link generator",
+      "description": "lager link til repo og github.io utifra personlige opplysninger som lagres lokalt via cookies"
+    }
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "👋<br>Stian<br> <span>Utvikler</span> med<br>interesse innenfor<br><span>UI & UX Design</span>",
+        "description": "<pre>function daily(){<br>kunnskap += 1%<br>estetikk += 3%<br>effektivitet += 1%<br>halveisløsning -= 1<br>}",
+        "button": "Kontakt meg",
+        "status": "Jobber for tiden med "
+      },
+      "quote": {
+        "text": "som en utvikler er det din jobb å sette deg selv ut av drift",
+        "author": "enellerannenluring"
+      },
+      "projects": { "title": "prosjekter", "button": "Se alle" },
+      "skills": { "title": "ferdigheter" },
+      "about": {
+        "title": "kort om meg",
+        "description": [
+          "Utforsker stadig nye rammeverk og kodespråk",
+          "Vektlegger brukervennlige og estetisk tiltalende løsninger"
+        ],
+        "button": "Les mer"
+      },
+      "contacts": {
+        "title": "kontakt",
+        "text": "",
+        "media": "kontakt meg her",
+        "donate": ""
+      }
+    },
+    "projects": {
+      "description": "Mine prosjekter",
+      "decent": "store prosjekter",
+      "small": "små prosjekter",
+      "inProgress": "unfinished"
+    },
+    "about": {
+      "description": "Hvem er jeg",
+      "about": { "description": ["", "", ""] },
+      "skills": { "title": "ferdigheter" },
+      "facts": {
+        "title": "fun-facts",
+        "list": ["Liker vintern bedre enn sommern", "ee", "f", "r", "a", "d"]
+      }
+    },
+    "contacts": { "description": "Hvor du kan nå meg" }
+  }
+}
