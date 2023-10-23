@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://stiantha.com/sitemap-index.xml 
-Sitemap: https://stiantha.github.io/sitemap-index.xml 
