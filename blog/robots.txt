@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stiantha.com/sitemap-index.xml
