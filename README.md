@@ -20,19 +20,9 @@ Add a detailed introduction about the project here, everything you want the read
 - npm run build
 - npm run serve
 
-##  :wrench: Development
-If you want other people to contribute to this project, this is the section, make sure you always add this.
-
 ### :notebook: Pre-Requisites
 List all the pre-requisites the system needs to develop this project.
-- A tool
-- B tool
-
-###  :nut_and_bolt: Development Environment
-Write about setting up the working environment for your project.
-- How to download the project...
-- How to install dependencies...
-
+- Node
 
 ###  :file_folder: File Structure
 Add a file structure here with the basic details about files, below is an example.
