@@ -13,14 +13,13 @@
 - [Credit/Acknowledgment](#star2-creditacknowledgment)
 - [License](#lock-license)
 
-##  :beginner: About
-
 ###  :package: Commands
+- npm install
 - npm run build
 - npm run serve
 
 ### :notebook: Pre-Requisites
-- Node
+- Node.js
 
 ###  :file_folder: File Structure
 
@@ -49,14 +48,6 @@
 |----|------------|-------|
 | 1  | index | Entry point
 
-
-## :question: FAQ
-
-##  :page_facing_up: Resources
-
-##  :camera: Gallery
-
-## :star2: Credit/Acknowledgment
 
 ##  :lock: License
 MIT License
