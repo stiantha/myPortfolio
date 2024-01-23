@@ -35,10 +35,5 @@
 └── README.md
 ```
 
-| No | File Name | Details 
-|----|------------|-------|
-| 1  | index | Entry point
-
-
 ##  :lock: License
 MIT License
