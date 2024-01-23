@@ -9,9 +9,6 @@
 - npm run build
 - npm run serve
 
-### :notebook: Pre-Requisites
-- Node.js
-
 ### 👨‍💻 Tech
 - JavaScript
 - Sass
