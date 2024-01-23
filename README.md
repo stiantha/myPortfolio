@@ -1,8 +1,8 @@
 ### Portfolio
 # Introduction
-- Add your project logo.
-- Write a short introduction to the project.
-- If you are using badges, add them here.
+- *logo*.
+- *introduction*.
+- *badges*.
 
 ## :ledger: Index
 
@@ -14,18 +14,15 @@
 - [License](#lock-license)
 
 ##  :beginner: About
-Add a detailed introduction about the project here, everything you want the reader to know.
 
 ###  :package: Commands
 - npm run build
 - npm run serve
 
 ### :notebook: Pre-Requisites
-List all the pre-requisites the system needs to develop this project.
 - Node
 
 ###  :file_folder: File Structure
-Add a file structure here with the basic details about files, below is an example.
 
 ```
 .
@@ -65,16 +62,12 @@ Add a file structure here with the basic details about files, below is an exampl
 
 
 ## :question: FAQ
-You can optionally add a FAQ section about the project.
 
 ##  :page_facing_up: Resources
-Add important resources here
 
 ##  :camera: Gallery
-Pictures of your project.
 
 ## :star2: Credit/Acknowledgment
-Credit the authors here.
 
 ##  :lock: License
 MIT License
