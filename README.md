@@ -30,10 +30,7 @@
 │
 ├── images
 │   ├── about-me.png
-│   ├── about-me8888.png
-│   ├── about-meD.png
 │   ├── hero.png
-│   ├── hero8888.png
 │   ├── logo-outline.svg
 │   └── logo.svg
 │   └── icons
@@ -51,8 +48,6 @@
 │       └── favicon.svg
 │   └── projects
 │       ├── discord-timer-bot.webp
-│       ├── ss.webp
-│       └── toterje.webp
 │
 ├── js
 │   ├── cb493ee12192a4e1c361.js
