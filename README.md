@@ -12,6 +12,14 @@
 ### :notebook: Pre-Requisites
 - Node.js
 
+### :notebook: Tech
+- JavaScript
+- Sass
+- CSS
+- TypeScript
+- Node.js
+- Webpack
+
 ###  :file_folder: File Structure
 
 ```
