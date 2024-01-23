@@ -4,15 +4,6 @@
 - *introduction*.
 - *badges*.
 
-## :ledger: Index
-
-- [About](#beginner-about)
-- [FAQ](#question-faq)
-- [Resources](#page_facing_up-resources)
-- [Gallery](#camera-gallery)
-- [Credit/Acknowledgment](#star2-creditacknowledgment)
-- [License](#lock-license)
-
 ###  :package: Commands
 - npm install
 - npm run build
