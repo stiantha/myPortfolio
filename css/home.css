@@ -266,7 +266,7 @@
 }
 .project__image {
   border-bottom: 1px solid var(--gray);
-  aspect-ratio: 16/9;
+  min-width: 325px;
 }
 .project__content {
   padding: 16px;
