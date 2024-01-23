@@ -16,19 +16,9 @@
 ##  :beginner: About
 Add a detailed introduction about the project here, everything you want the reader to know.
 
-## :zap: Usage
-Write about how to use this project.
-
-###  :electric_plug: Installation
-- Steps on how to install this project, to use it.
-- Be very detailed here, For example, if you have tools which run on different operating systems, write installation steps for all of them.
-
-```
-$ add installations steps if you have to.
-```
-
 ###  :package: Commands
-- Commands to start the project.
+- npm run build
+- npm run serve
 
 ##  :wrench: Development
 If you want other people to contribute to this project, this is the section, make sure you always add this.
