@@ -50,17 +50,6 @@
 | 1  | index | Entry point
 
 
- ### :cactus: Branches
-
- I use an agile continuous integration methodology, so the version is frequently updated and development is really fast.
-
-1. **`stage`** is the development branch.
-
-2. **`master`** is the production branch.
-
-3. No other permanent branches should be created in the main repository, you can create feature branches but they should get merged with the master.
-
-
 ## :question: FAQ
 
 ##  :page_facing_up: Resources
