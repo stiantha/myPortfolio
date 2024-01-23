@@ -15,20 +15,6 @@
 ###  :file_folder: File Structure
 
 ```
-M.2 500 GB (Volume Serial Number: FAE1-1894)
-│
-├── C:
-│   ├── .gitignore
-│   ├── 404.html
-│   ├── CNAME
-│   ├── index.html
-│   ├── LICENSE.md
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── README.md
-│   ├── tree.txt
-│   └── webpack.config.js
-│
 ├── css
 │   ├── about.css
 │   ├── home.css
