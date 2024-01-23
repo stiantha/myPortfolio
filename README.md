@@ -12,7 +12,7 @@
 ### :notebook: Pre-Requisites
 - Node.js
 
-### :laptop: Tech
+### 👨‍💻 Tech
 - JavaScript
 - Sass
 - CSS
