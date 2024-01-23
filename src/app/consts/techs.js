@@ -38,4 +38,5 @@ export default {
     br: '\n',
     no: "Norsk",
     en: "Engelsk",
+    paas:"PaaS",
 }

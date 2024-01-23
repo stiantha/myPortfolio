@@ -18,9 +18,9 @@
     "tool": "Annet"
   },
   "projects": {
-    "toterje": { 
-      "name": "github link generator", 
-      "description": "lager link til repo og github.io utifra personlige opplysninger som lagres lokalt via cookies" }
+    "discord-timer-bot": { 
+      "name": "Discord Bot - 72h", 
+      "description": "World of Warcraft - SoD. Botten identifiserer den siste gyldige tilbakestillingen (reset) og teller deretter ned 72 timer fra den datoen. Brukernavnet til botten er satt som dag og klokkeslett for reset. Statusen viser timer igjen til neste reset" }
   },
   "pages": {
     "home": {

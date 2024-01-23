@@ -3,12 +3,12 @@
  */
 const projects = [
     {
-        id: "toterje",
+        id: "discord-timer-bot",
         links: {
-            figma: "2352362362",
-            live: "stiantha.com/js/prosjekter/toterje/index.html"
+            github: "/SoD-ResetTimer/",
+            live: "discord.com/oauth2/authorize?client_id=1198244865465667634&permissions=67108864&scope=bot"
         },
-        techs: ["html", "css", "js"],
+        techs: ["python", "paas"],
         hasImage: true,
     },
 
