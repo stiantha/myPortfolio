@@ -26,18 +26,16 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "<br>I am Stian, a <span>Developer</span> with a passion for<br><span>UI & UX Design</span>",
+        "title": "<br>Stian<br>a <span>Developer</span><br>with passion<br>for <span>UI & UX Design</span>",
         "description": [
-          "Im passionate about creative and innovative solutions",
-          "Continuously adapting to changing trends in the industry", 
-          "Emphasize user-friendly and appealing solutions"
+          "Creative thinker who brings digital ideas<br> to life through smart and user-friendly solutions."
         ],
         "button": "Contact me",
         "status": "Looking for a job through:"
       },
       "quote": {
         "text": "as a developer, it's your job to put yourself out of operation",
-        "author": "some smart person"
+        "author": "somecleverperson"
       },
       "projects": { "title": "projects", "button": "See all" },
       "skills": { "title": "skills" },

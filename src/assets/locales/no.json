@@ -25,11 +25,9 @@
   "pages": {
     "home": {
       "hero": {
-        "title": "<br>Jeg er Stian, <span>Utvikler</span> med lidenskap for<br><span>UI & UX Design</span>",
+        "title": "<br>Stian<br>en <span>Utvikler</span><br>med lidenskap<br>for <span>UI & UX Design</span>",
         "description": [
-          "Lidenskap for kreative og innovative løsninger",
-          "Tilpasser meg raskt skiftende trender i bransjen", 
-          "Vektlegger brukervennlige og tiltalende løsninger"
+          "Kreativ tenker som gir liv til digitale<br>ideer gjennom smarte og brukervennlige løsninger."
         ],
         "button": "Kontakt meg",
         "status": "Søker jobb gjennom:"
