@@ -1,5 +1,5 @@
 $colors: (
-    primary: 5 100% 45%,
+    primary: 170 60% 44%,
     primary-op: 5 100% 45% / 0.1,
     gray: 219 14% 71%,
     gray-op: 219 14% 71% / 0.1,
@@ -7,9 +7,11 @@ $colors: (
     white: 0 0% 100%,
 );
 
+:root {
+    --primarycss: #33cccc; // or rgb(51, 204, 204)
+  }
+
 
 $desktopScreen: 1024px;
 $tabletScreen: 768px;
 $mobileScreen: 500px;
-
-

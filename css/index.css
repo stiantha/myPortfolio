@@ -31,6 +31,10 @@
   font-style: normal;
   src: url(../fonts/e3428b597c378e1fdcb0.woff) format("woff");
 }
+:root {
+  --primarycss: #33cccc;
+}
+
 html,
 body,
 div,
@@ -496,7 +500,7 @@ body, html {
 }
 
 :root {
-  --primary: hsl(5 100% 45%);
+  --primary: hsl(170 60% 44%);
   --primary-op: hsl(5 100% 45%/0.1);
   --gray: hsl(219 14% 71%);
   --gray-op: hsl(219 14% 71%/0.1);
