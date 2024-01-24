@@ -305,7 +305,7 @@ body, html {
 .footer {
   max-width: inherit;
   width: 100%;
-  padding-top: 32px;
+  border-top: 1px solid var(--gray);
   margin-bottom: 16px;
 }
 .footer__copyright {
@@ -318,7 +318,6 @@ body, html {
   gap: 32px;
 }
 .footer__email {
-  display: none;
   color: var(--gray);
 }
 .footer__email:hover {
