@@ -1,9 +1,9 @@
 {
   "header": {
     "home": "home",
-    "projects": "prosjekter",
-    "about": "om-meg",
-    "contacts": "kontakt"
+    "projects": "projects",
+    "about": "about-me",
+    "contacts": "contact"
   },
   "footer": {
     "description": "",
@@ -11,80 +11,81 @@
     "media": "Media"
   },
   "skills": {
-    "language": "Språk",
-    "database": "Datalagring",
-    "other": "Markeringsspråk",
-    "framework": "Rammeverk",
-    "tool": "Annet"
+    "language": "Language",
+    "database": "Data Storage",
+    "other": "Markup Languages",
+    "framework": "Frameworks",
+    "tool": "Other"
   },
   "projects": {
-    "toterje": { 
-      "name": "github link generator", 
-      "description": "lager link til repo og github.io utifra personlige opplysninger som lagres lokalt via cookies" }
+    "discord-timer-bot": { 
+      "name": "Discord Bot - 72h", 
+      "description": "World of Warcraft - SoD. The bot identifies the last valid reset and then counts down 72 hours from that date. The bot's username is set as the day and time for reset. The status shows hours left until the next reset."
+    }
   },
   "pages": {
     "home": {
       "hero": {
-        "title": "👋<br>Jeg er Stian, <span>Utvikler</span> med interesse innenfor<br><span>UI & UX Design</span>",
+        "title": "<br>I am Stian, a <span>Developer</span> with a passion for<br><span>UI & UX Design</span>",
         "description": [
-          "Brenner for kreative og innovative løsninger",
-          "Tilpasser meg raskt skiftende trender i bransjen", 
-          "Vektlegger brukervennlige og tiltalende løsninger"
+          "Passionate about creative and innovative solutions",
+          "Quickly adapt to changing trends in the industry", 
+          "Emphasize user-friendly and appealing solutions"
         ],
-        "button": "Kontakt meg",
-        "status": "Søker jobb under:"
+        "button": "Contact me",
+        "status": "Looking for a job through:"
       },
       "quote": {
-        "text": "som en utvikler er det din jobb å sette deg ut av drift",
-        "author": "enellerannenluring"
+        "text": "as a developer, it's your job to put yourself out of operation",
+        "author": "some smart person"
       },
-      "projects": { "title": "prosjekter", "button": "Se alle" },
-      "skills": { "title": "ferdigheter" },
+      "projects": { "title": "projects", "button": "See all" },
+      "skills": { "title": "skills" },
       "about": {
-        "title": "kort om meg",
+        "title": "about me",
         "description": [
-         "Jeg søker stadig etter nye utfordringer for å utvide min kunnskap og forbedre mine ferdigheter.",
-         "Mitt mål er ikke bare å mestre koding som et fag, men å skape innovative løsninger",
-         "Som kan ha en positiv innvirkning på brukeropplevelsen og effektiviteten i ethvert prosjekt jeg engasjerer meg i."
+         "I am constantly seeking new challenges to expand my knowledge and improve my skills.",
+         "My goal in web development is not just to create functional and responsive applications.",
+         "It's to create good and creative solutions, which can have a positive impact on the user experience and the efficiency of any project I engage in."
         ],
-        "button": "Les mer"
+        "button": "Read more"
       },
       "contacts": {
-        "title": "kontakt",
+        "title": "contact",
         "text": "",
-        "media": "kontakt meg her",
+        "media": "contact me here",
         "donate": ""
       }
     },
     "projects": {
       "description": "",
-      "decent": "store prosjekter",
-      "small": "små prosjekter",
-      "inProgress": "uferdige prosjekter"
+      "decent": "big projects",
+      "small": "small projects",
+      "inProgress": "unfinished projects"
     },
     "about": {
       "description": "",
       "about": {
         "description": [
-          "<b>Designfokusert Tilnærming 🎨</b><br>Min styrke ligger i å kombinere teknisk dyktighet med en estetisk sans. Med en forståelse av UI/UX-prinsippene, jobber jeg hardt for å levere løsninger som ikke bare oppfyller tekniske krav, men også gir gode brukeropplevelser.",
-          "<b>Full Stack Ekspertise 💻</b><br>Med kompetanse innen JS, C#, Python, Node, SQL og ulike rammeverk, er jeg i stand til å skape funksjonelle og responsive applikasjoner.",
-          "<b>Samarbeid og Kommunikasjon 🤝</b><br>Jeg verdsetter samarbeid og tror på å jobbe tett med kreative og tekniske team for å realisere visjonen bak hvert prosjekt.",
-          "<b>Lidenskap for Læring 🌐</b><br>Teknologibransjen er i konstant endring, og jeg omfavner utfordringene som følger med det. Jeg er dedikert til kontinuerlig læring og utforsker nye metoder og verktøy for å forbedre mine ferdigheter og holde meg oppdatert med de nyeste trendene innen webutvikling."
-      ]
+          "<b>Design-focused Approach 🎨</b><br>My strength lies in combining technical skill with an aesthetic sense. With an understanding of UI/UX principles, I work hard to deliver solutions that not only meet technical requirements, but also provide good user experiences.",
+          "<b>Full Stack Expertise 💻</b><br>With competence in JS, C#, Python, Node, SQL and various frameworks, I am able to create functional and responsive applications.",
+          "<b>Collaboration and Communication 🤝</b><br>I value collaboration and believe in working closely with creative and technical teams to realize the vision behind each project.",
+          "<b>Passion for Learning 🌐</b><br>The technology industry is constantly changing, and I embrace the challenges that come with it. I am dedicated to continuous learning and exploring new methods and tools to improve my skills and keep up with the latest trends in web development."
+        ]
       },
-      "skills": { "title": "ferdigheter" },
+      "skills": { "title": "skills" },
       "facts": {
         "title": "fun-facts",
         "list": [
-          "Har en tendens til å implementere funksjoner før de blir forespurt – en ekte tidsreisende i koden",
-          "Programmerer bedre mens jeg hører på kreativ musikk, og koden blir derfor en symfoni av logikk",
-          "Kan oversette komplekse kodelinjer til et forståelig språk ved hjelp av emojis",
-          "Kan forvandle koder fra nuller og enere til et magisk digitalt kunstverk",
-          "Utforsker ukjente territorier i kodelandet og er ikke redd for å ta risikoer i jakt på nye funksjoner",
-          "Kan jonglere mellom flere prosjekter samtidig, uten å miste en eneste kodelinje"
+          "Tends to implement features before they are requested – a true time traveler in the code",
+          "Programs better while listening to creative music, and the code therefore becomes a symphony of logic",
+          "Can translate complex lines of code into a comprehensible language using emojis",
+          "Can transform codes from zeros and ones into a magical digital artwork",
+          "Explores unknown territories in the land of code and is not afraid to take risks in search of new features",
+          "Can juggle multiple projects at the same time, without losing a single line of code"
         ]
       }
     },
-    "contacts": { "description": "Hvor du kan nå meg" }
+    "contacts": { "description": "Where you can reach me" }
   }
 }

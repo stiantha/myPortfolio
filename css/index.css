@@ -124,6 +124,26 @@ body, html {
   fill: var(--gray);
 }
 
+/* Width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--white);
+}
+
 .media-header {
   position: fixed;
   display: flex;
@@ -281,11 +301,11 @@ body, html {
 .footer {
   max-width: inherit;
   width: 100%;
-  border-top: 1px solid var(--gray);
   padding-top: 32px;
   margin-bottom: 16px;
 }
 .footer__copyright {
+  display: none;
   color: var(--gray);
   text-align: center;
 }
@@ -294,6 +314,7 @@ body, html {
   gap: 32px;
 }
 .footer__email {
+  display: none;
   color: var(--gray);
 }
 .footer__email:hover {
@@ -310,12 +331,17 @@ body, html {
   margin-bottom: 48px;
 }
 .footer__list {
-  display: flex;
-  gap: 8px;
+  display: none;
+  gap: 10px;
 }
 .footer__title {
+  display: none;
+  margin-left: 8px;
   font-weight: 500;
   font-size: 24px;
+}
+.footer__info {
+  display: none;
 }
 
 .button {
@@ -459,11 +485,11 @@ body, html {
 
 .logo {
   display: flex;
-  gap: 8px;
+  gap: 16px;
+  align-items: center;
 }
 .logo__img {
   aspect-ratio: 1;
-  width: 16px;
 }
 .logo__name {
   font-weight: 700;
