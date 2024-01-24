@@ -1,8 +1,5 @@
-### Portfolio
 # Introduction
-- *logo*.
-- *introduction*.
-- *badges*.
+- Portfolio
 
 ###  :package: Commands
 - npm install
