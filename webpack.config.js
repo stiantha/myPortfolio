@@ -22,10 +22,10 @@ module.exports = {
             template: "src/templates/index.ejs",
             filename: "index.html",
             excludeChunks: ["spaHandler"],
-            title: "Elias Portfolio",
+            title: "Stian Portfolio",
             'meta': {
                 'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
-                'theme-color': '#C778DD',
+                'theme-color': '#2db398',
             }
         }),
         new plugins.html({
