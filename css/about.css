@@ -40,6 +40,9 @@
 .about__description {
   margin-bottom: 16px;
 }
+.about__description span {
+  color: var(--primary);
+}
 .about__illustrations {
   flex: 1 1 0;
   min-width: 300px;

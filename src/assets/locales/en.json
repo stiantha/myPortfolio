@@ -65,10 +65,10 @@
       "description": "",
       "about": {
         "description": [
-          "<b>Design-focused Approach 🎨</b><br>My strength lies in combining technical skill with an aesthetic sense. With an understanding of UI/UX principles, I work hard to deliver solutions that not only meet technical requirements, but also provide good user experiences.",
-          "<b>Full Stack Expertise 💻</b><br>With competence in JS, C#, Python, Node, SQL and various frameworks, I am able to create functional and responsive applications.",
-          "<b>Collaboration and Communication 🤝</b><br>I value collaboration and believe in working closely with creative and technical teams to realize the vision behind each project.",
-          "<b>Passion for Learning 🌐</b><br>The technology industry is constantly changing, and I embrace the challenges that come with it. I am dedicated to continuous learning and exploring new methods and tools to improve my skills and keep up with the latest trends in web development."
+          "<span>Design-focused Approach </span><br>My strength lies in combining technical skill with an aesthetic sense. With an understanding of UI/UX principles, I work hard to deliver solutions that not only meet technical requirements, but also provide good user experiences.",
+          "<span>Full Stack Expertise </span><br>With competence in JS, C#, Python, Node, SQL and various frameworks, I am able to create functional and responsive applications.",
+          "<span>Collaboration and Communication </span><br>I value collaboration and believe in working closely with creative and technical teams to realize the vision behind each project.",
+          "<span>Passion for Learning </span><br>The technology industry is constantly changing, and I embrace the challenges that come with it. I am dedicated to continuous learning and exploring new methods and tools to improve my skills and keep up with the latest trends in web development."
         ]
       },
       "skills": { "title": "skills" },
