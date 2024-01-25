@@ -31,10 +31,6 @@
   font-style: normal;
   src: url(../fonts/e3428b597c378e1fdcb0.woff) format("woff");
 }
-:root {
-  --primarycss: #33cccc;
-}
-
 html,
 body,
 div,
