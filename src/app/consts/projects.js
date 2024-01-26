@@ -10,6 +10,7 @@ const projects = [
         },
         techs: ["python", "paas"],
         hasImage: true,
+        isSmall: true,
     },
 
 ];

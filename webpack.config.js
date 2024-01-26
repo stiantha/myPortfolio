@@ -25,7 +25,6 @@ module.exports = {
             title: "Stian Portfolio",
             'meta': {
                 'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
-                'theme-color': '#2db398',
             }
         }),
         new plugins.html({
