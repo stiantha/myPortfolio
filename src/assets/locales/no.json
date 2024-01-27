@@ -17,11 +17,17 @@
     "framework": "Rammeverk",
     "tool": "Annet"
   },
-  "projects": {
-    "discord-timer-bot": { 
-      "name": "Discord Bot - 72h", 
-      "description": "World of Warcraft - SoD. Botten identifiserer den siste gyldige tilbakestillingen (reset) og teller deretter ned 72 timer fra den datoen. Brukernavnet til botten er satt som dag og klokkeslett for reset. Statusen viser timer igjen til neste reset" }
-  },
+  
+    "projects": {
+      "discord-timer-bot": {
+        "name": "Discord Bot - 72h",
+        "description": "Identifiserer siste reset i world of warcraft og teller deretter ned 72 timer fra den datoen. Brukernavnet til botten er satt som dag og klokkeslett for reset. Statusen viser timer igjen til neste reset"
+      },
+      "devtools": {
+        "name": "Utvikler Verktøy",
+        "description": "Samling av ressurser for utviklere. Ai, vscode extensions, cheatsheets, farger, ikoner, fonter, bilder, lyder, videoer, kode, tutorials og mye mer."
+      }
+    },
   "pages": {
     "home": {
       "hero": {
@@ -30,7 +36,7 @@
           "Kreativ tenker som gir liv til digitale<br>ideer gjennom smarte og brukervennlige løsninger."
         ],
         "button": "Kontakt meg",
-        "status": "Student hos"
+        "status": "Student"
       },
       "quote": {
         "text": "som en utvikler er det din jobb å sette deg ut av drift",

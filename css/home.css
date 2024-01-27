@@ -156,6 +156,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  gap: 32px;
   margin-bottom: 48px;
 }
 .projects__link {
@@ -272,6 +273,7 @@
 .project__image {
   border-bottom: 1px solid var(--gray);
   min-width: 325px;
+  aspect-ratio: 4/2;
 }
 .project__content {
   padding: 16px;

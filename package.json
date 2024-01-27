@@ -20,7 +20,8 @@
   "scripts": {
     "clean": "rimraf ./js ./images ./locales .css",
     "build": "npm run clean && webpack",
-    "serve": "webpack serve",
+    "serve": "webpack serve --open",
+    "dev": "webpack serve --open",
     "start": "webpack serve --open"
   },
   "description": "portfolio",
