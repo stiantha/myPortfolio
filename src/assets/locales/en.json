@@ -24,7 +24,7 @@
       "Identifies the last valid reset in world of warcraft and counts down 72 hours from that date. The username of the bot is set as the day and time of the reset. The status shows hours left until the next reset"
     },
     "devtools": {
-      "name": "Utvikler Verktøy",
+      "name": "Developer Tools",
       "description": 
       "Collection of resources for developers. Ai, vscode extensions, cheatsheets, colors, icons, fonts, images, sounds, videos, code, tutorials and much more."
     }
