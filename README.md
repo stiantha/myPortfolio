@@ -17,5 +17,4 @@
 MIT License
 
 ##  🖼️ Layout
-
-![website](https://github.com/stiantha/myPortfolio.js/blob/main/images/screencapture-stiantha-2024-01-24-11_26_11.png?raw=true)
+![ddd](https://github.com/stiantha/myPortfolio/assets/132207909/5be7f415-8f1a-4199-bc1b-dcddc7b813e3)
