@@ -2,7 +2,7 @@
  * @type {import("../../types/Project").Project[]}
  */
 const projects = [
-    {
+/*     {
         id: "discord-timer-bot",
         links: {
             github: "/SoD-ResetTimer/",
@@ -10,7 +10,7 @@ const projects = [
         techs: ["python", "paas"],
         hasImage: true,
         isSmall: true,
-    },
+    }, */
     {
         id: "devtools",
         links: {
