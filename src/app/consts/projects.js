@@ -15,7 +15,7 @@ const projects = [
         id: "devtools",
         links: {
             github: "/DevTools/",
-            live: "https://127606.vercel.app/",
+            live: "127606.vercel.app/",
         },
         techs: ["mongo", "express", "react", "node"],
         hasImage: true,
