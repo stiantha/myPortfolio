@@ -1,7 +1,7 @@
 export default {
     language: ["js", "python", "c"],
-    database: ["mongo"],
+    database: ["mongo", "sql"],
     other: ["html", "css", "sass", "scss"],
-    tool: ["vscode", "git", "br", "figma", "canva"],
+    tool: ["vscode", "azure", "vm", "vercel", "heroku", "git", "br", "figma", "canva"],
     framework: ["react","vue", "astro"]   
 }

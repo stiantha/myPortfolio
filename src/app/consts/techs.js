@@ -39,4 +39,9 @@ export default {
     no: "Norsk",
     en: "Engelsk",
     paas:"PaaS",
+    azure: "Azure",
+    heroku: "Heroku",
+    vm: "VM",
+    vercel: "Vercel",
+    sql: "SQL",
 }
