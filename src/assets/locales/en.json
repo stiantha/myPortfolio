@@ -25,8 +25,7 @@
     },
     "devtools": {
       "name": "Developer Tools",
-      "description": 
-      "Resource Library for Web Development. Including AI, extensions, colors, fonts, images, tutorials, and more."
+      "description": "Resource library for web development. Including AI, extensions, colors, fonts, images, tutorials, and more. Based on VS Code and GitHub. Files are created in Markdown format."
     }
   },
   "pages": {

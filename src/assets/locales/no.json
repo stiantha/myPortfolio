@@ -25,7 +25,7 @@
       },
       "devtools": {
         "name": "Utvikler Verktøy",
-        "description": "Ressurs bibliotek for web utvikling. Som ai, extensions, farger, fonter, bilder, tutorials og mer."
+        "description": "Ressurs bibliotek for web utvikling. Som ai, extensions, farger, fonter, bilder, tutorials og mer. Basert på VS.code og Github. Filer er laget i markdown format"
       }
     },
   "pages": {
